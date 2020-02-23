@@ -35,7 +35,7 @@ var routes = [
   },
   {
     path: "/user-page",
-    name: "Patient Profilling",
+    name: "Patient Transaction",
     icon: "nc-icon nc-single-02",
     component: UserPage,
     layout: "/admin"

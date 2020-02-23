@@ -43,122 +43,129 @@ class User extends React.Component {
             <Col md="12">
               <Card className="card-user">
                 <CardHeader>
-                  <CardTitle tag="h5">Edit Profile</CardTitle>
+                  <CardTitle tag="h5">Patient Information</CardTitle>
                 </CardHeader>
                 <CardBody>
                   <Form>
                     <Row>
-                      <Col className="pr-1" md="5">
-                        <FormGroup>
-                          <label>Company (disabled)</label>
+                      <Col className="pr-1" md="4">
+                      <FormGroup>
+                          <label>ID No.</label>
                           <Input
-                            defaultValue="Creative Code Inc."
-                            disabled
-                            placeholder="Company"
+                            
+                            placeholder="Enter ID No."
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                     <Col className="pr-1" md="2">
+                       <FormGroup>
+                         <label>Sex</label>
+                          <select class="form-control">
+                           
+                          <option>Select..</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                          </select>
+                         
+                       </FormGroup>
+                     </Col>
+                     
+                     
+                     
+                    </Row>
+                    <Row>
+                      <Col className="pr-1" md="4">
+                        <FormGroup>
+                          <label>First Name</label>
+                          <Input
+                            
+                            placeholder="First Name"
+                            type="text"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col className="pl-1" md="4">
+                        <FormGroup>
+                          <label>Last Name</label>
+                          <Input
+                           
+                            placeholder="Last Name"
                             type="text"
                           />
                         </FormGroup>
                       </Col>
                       <Col className="px-1" md="3">
                         <FormGroup>
-                          <label>Username</label>
+                          <label>Middle Name</label>
                           <Input
-                            defaultValue="michael23"
-                            placeholder="Username"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="pl-1" md="4">
-                        <FormGroup>
-                          <label htmlFor="exampleInputEmail1">
-                            Email address
-                          </label>
-                          <Input placeholder="Email" type="email" />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="pr-1" md="6">
-                        <FormGroup>
-                          <label>First Name</label>
-                          <Input
-                            defaultValue="Chet"
-                            placeholder="Company"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="pl-1" md="6">
-                        <FormGroup>
-                          <label>Last Name</label>
-                          <Input
-                            defaultValue="Faker"
-                            placeholder="Last Name"
+                           
+                            placeholder="Middle Name"
                             type="text"
                           />
                         </FormGroup>
                       </Col>
                     </Row>
                     <Row>
-                      <Col md="12">
-                        <FormGroup>
-                          <label>Address</label>
-                          <Input
-                            defaultValue="Melbourne, Australia"
-                            placeholder="Home Address"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
+                    <Col className="pr-1" md="4">
+                       <FormGroup>
+                         <label>College</label>
+                          <select class="form-control">
+                           
+                          <option>Select..</option>
+                            <option>ICS</option>
+                            <option>CET</option>
+                            <option>CTE</option>
+                            <option>CN</option>
+                          </select>
+                         
+                       </FormGroup>
+                     </Col>
+                     <Col className="pr-1" md="4">
+                       <FormGroup>
+                         <label>Course</label>
+                          <select class="form-control">
+                           
+                          <option>Select..</option>
+                            <option>Department of Computer Engineering</option>
+                            <option>Department of Computer Education</option>
+                            <option>Department of Civil Engineering</option>
+                            <option>CN</option>
+                          </select>
+                         
+                       </FormGroup>
+                     </Col>
+                     <Col className="pr-1" md="3">
+                       <FormGroup>
+                         <label>Year</label>
+                          <select class="form-control">
+                           
+                          <option>Select..</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                          </select>
+                         
+                       </FormGroup>
+                     </Col>
                     </Row>
                     <Row>
-                      <Col className="pr-1" md="4">
-                        <FormGroup>
-                          <label>City</label>
-                          <Input
-                            defaultValue="Melbourne"
-                            placeholder="City"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="px-1" md="4">
-                        <FormGroup>
-                          <label>Country</label>
-                          <Input
-                            defaultValue="Australia"
-                            placeholder="Country"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="pl-1" md="4">
-                        <FormGroup>
-                          <label>Postal Code</label>
-                          <Input placeholder="ZIP Code" type="number" />
-                        </FormGroup>
-                      </Col>
+                     
+                      
+                      
                     </Row>
                     <Row>
-                      <Col md="12">
-                        <FormGroup>
-                          <label>About Me</label>
-                          <Input
-                            type="textarea"
-                            defaultValue="Oh so, your weak rhyme You doubt I'll bother, reading into it"
-                          />
-                        </FormGroup>
-                      </Col>
+                      
                     </Row>
                     <Row>
                       <div className="update ml-auto mr-auto">
                         <Button
                           className="btn-round"
                           color="primary"
-                          type="submit"
+                          type="submit"                          
                         >
-                          Update Profile
+                          Next
                         </Button>
                       </div>
                     </Row>
