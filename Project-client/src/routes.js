@@ -18,9 +18,9 @@
 */
 import Dashboard from "views/Dashboard.jsx";
 
-import Icons from "views/Icons.jsx";
-import Typography from "views/Typography.jsx";
-import TableList from "views/Tables.jsx";
+import PatientRecords from "views/PatientRecords.jsx";
+import Setting from "views/Setting.jsx";
+import Inventory from "views/Inventory.jsx";
 
 import PatientInfo from "views/PatientInfo.jsx";
 
@@ -48,24 +48,24 @@ var routes = [
     path: "/patient-records",
     name: "Patient Records",
     icon: "nc-icon nc-badge",
-    component: Icons,
+    component: PatientRecords,
     layout: "/admin"
   },
   {
     path: "/inventory",
     name: "Inventory",
     icon: "nc-icon nc-tile-56",
-    component: TableList,
+    component: Inventory,
     layout: "/admin"
   },
   
   
   
   {
-    path: "/setting",
+    path: "/settings",
     name: "Setting",
     icon: "nc-icon nc-settings-gear-65",
-    component: Typography,
+    component: Setting,
     layout: "/admin"
   },
   

@@ -21,7 +21,7 @@ import React from "react";
 // reactstrap components
 import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
 
-class Typography extends React.Component {
+class Setting extends React.Component {
   render() {
     return (
       <>
@@ -156,4 +156,4 @@ class Typography extends React.Component {
   }
 }
 
-export default Typography;
+export default Setting;
