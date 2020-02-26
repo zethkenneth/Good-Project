@@ -1,21 +1,4 @@
-/*!
 
-=========================================================
-* Paper Dashboard React - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React, { useState } from "react";
 import classnames from 'classnames';
 
@@ -59,19 +42,28 @@ const PatientInfo = (props) => {
                 className={classnames({ active: activeTab === '1' })}
                 onClick={() => { toggle('1'); }}
               >
-                Tab1
+                Patient Form
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
                 className={classnames({ active: activeTab === '2' })}
                 onClick={() => { toggle('2'); }}
-              >
-                Moar Tabs
+              >Adviser Form
               </NavLink>
             </NavItem>
+
+            <NavItem>
+              <NavLink
+                className={classnames({ active: activeTab === '3' })}
+                onClick={() => { toggle('3'); }}
+              >Diagnosis
+              </NavLink>
+            </NavItem>
+
           </Nav>
           <TabContent activeTab={activeTab}>
+            
             <TabPane tabId="1">
               <Row>
                 <Col sm="12">
@@ -82,7 +74,7 @@ const PatientInfo = (props) => {
                     <CardBody>
                       <Form>
                         <Row>
-                          <Col className="pr-1" md="4">
+                          <Col className="pr-1" md="3">
                           <FormGroup>
                               <label>ID No.</label>
                               <Input
@@ -92,7 +84,54 @@ const PatientInfo = (props) => {
                               />
                             </FormGroup>
                           </Col>
-                         <Col className="pr-1" md="2">
+                         
+                         
+                        </Row>
+                        <Row>
+                        <Col className="pr-1" md="3">
+                            <FormGroup>
+                              <label>Last Name</label>
+                              <Input
+                               
+                                placeholder="Last Name"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+                          <Col className="pr-1" md="3">
+                            <FormGroup>
+                              <label>First Name</label>
+                              <Input
+                                placeholder="First Name"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+                          
+                          <Col className="pr-1" md="3">
+                            <FormGroup>
+                              <label>Middle Name</label>
+                              <Input
+                               
+                                placeholder="Middle Name"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+
+                          <Col className="pr-1" md="2">
+                            <FormGroup>
+                              <label>Extension Name</label>
+                              <Input
+                               
+                                placeholder="Ext Name"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+                        </Row>
+                        <Row>
+                        <Col className="pr-1" md="3">
                            <FormGroup>
                              <label>Sex</label>
                               <select className="form-control">
@@ -105,48 +144,16 @@ const PatientInfo = (props) => {
                            </FormGroup>
                          </Col>
 
-                         <Col className="pr-1" md="2">
+                         <Col className="pr-1" md="3">
                            <FormGroup>
                              <label>Birth Date</label>
                              <input type="date" className="form-control" placeholder="month"/>
                            </FormGroup>
                          </Col>
-                         
-                        </Row>
-                        <Row>
-                          <Col className="pr-1" md="4">
-                            <FormGroup>
-                              <label>First Name</label>
-                              <Input
-                                placeholder="First Name"
-                                type="text"
-                              />
-                            </FormGroup>
-                          </Col>
-                          <Col className="pl-1" md="4">
-                            <FormGroup>
-                              <label>Last Name</label>
-                              <Input
-                               
-                                placeholder="Last Name"
-                                type="text"
-                              />
-                            </FormGroup>
-                          </Col>
-                          <Col className="px-1" md="3">
-                            <FormGroup>
-                              <label>Middle Name</label>
-                              <Input
-                               
-                                placeholder="Middle Name"
-                                type="text"
-                              />
-                            </FormGroup>
-                          </Col>
                         </Row>
 
                         <Row>
-                        <Col className="pr-1" md="4">
+                        <Col className="pr-1" md="3">
                            <FormGroup>
                              <label>College</label>
                               <select className="form-control">
@@ -160,7 +167,7 @@ const PatientInfo = (props) => {
                            </FormGroup>
                          </Col>
                         
-                         <Col className="pr-1" md="4">
+                         <Col className="pr-1" md="3">
                            <FormGroup>
                              <label>Course</label>
                               <select className="form-control">
@@ -210,24 +217,304 @@ const PatientInfo = (props) => {
                 </Col>
               </Row>
             </TabPane>
+            
+            
             <TabPane tabId="2">
-              <Row>
-                <Col sm="6">
-                  <Card body>
-                    <CardTitle>Special Title Treatment</CardTitle>
-                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                    <Button>Go somewhere</Button>
-                  </Card>
-                </Col>
-                <Col sm="6">
-                  <Card body>
-                    <CardTitle>Special Title Treatment</CardTitle>
-                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                    <Button>Go somewhere</Button>
+            <Row>
+                <Col sm="12">
+                  <Card className="card-user">
+                    <CardHeader>
+                      <CardTitle tag="h5">Adviser's Information</CardTitle>
+                    </CardHeader>
+                    <CardBody>
+                      <Form>
+                        <Row>
+                          <Col className="pr-1" md="3">
+                          <FormGroup>
+                              <label>Faculty ID No.</label>
+                              <Input
+                                placeholder="Enter ID No."
+                                type="text"
+                              />
+                          </FormGroup>
+                          </Col>
+                         
+                   
+                       
+                        <Col className="pr-1" md="3">
+                           <FormGroup>
+                             <label>Department (College, ILS, SHS)</label>
+                              <select className="form-control">
+                               
+                              <option>Select..</option>
+                                <option>ICS</option>
+                                <option>CET</option>
+                                <option>CTE</option>
+                                <option>CN</option>
+                                <option>ILS</option>
+                                <option>SHS</option>
+                              </select>
+                           </FormGroup>
+                         </Col>
+
+                         <Col className="pr-1" md="3">
+                            <FormGroup>
+                              <label>Mobile Number</label>
+                              <Input
+                                placeholder="Mobile Number"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+
+                        </Row>
+                        <Row>
+                        <Col className="pr-1" md="3">
+                            <FormGroup>
+                              <label>Last Name</label>
+                              <Input
+                               
+                                placeholder="Last Name"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+                          <Col className="pr-1" md="3">
+                            <FormGroup>
+                              <label>First Name</label>
+                              <Input
+                                placeholder="First Name"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+                          
+                          <Col className="pr-1" md="3">
+                            <FormGroup>
+                              <label>Middle Name</label>
+                              <Input
+                               
+                                placeholder="Middle Name"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+
+                          <Col className="pr-1" md="2">
+                            <FormGroup>
+                              <label>Extension Name</label>
+                              <Input
+                               
+                                placeholder="Ext Name"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+                        </Row>
+
+                        
+                        <Row>
+                        
+                        <CardHeader>
+                      <CardTitle tag="h5">Guardian's Information (Optional)</CardTitle>
+                    </CardHeader>
+                    </Row>
+          
+                    <Row>
+                        <Col className="pr-1" md="3">
+                            <FormGroup>
+                              <label>Guardian's Full Name</label>
+                              <Input
+                                placeholder="Last,  First,  Middle"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+
+                          <Col className="pr-1" md="3">
+                            <FormGroup>
+                              <label>Mobile Number</label>
+                              <Input
+                               
+                                placeholder="Mobile Number"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+                     </Row>     
+                          
+                          
+                       
+                        <Row>
+                          <div className="update ml-auto mr-auto">
+                          <Row>
+                          <div className="update ml-auto mr-auto">
+                            <Button
+                              className="btn-round"
+                              color="primary"
+                              type="submit">
+                              Next
+                            </Button>
+                          </div>
+                        </Row>
+                          </div>
+                        </Row>
+                      </Form>
+                    </CardBody>
                   </Card>
                 </Col>
               </Row>
             </TabPane>
+
+            <TabPane tabId="3">
+            <Row>
+                <Col sm="12">
+                  <Card className="card-user">
+                    <CardHeader>
+                      <CardTitle tag="h5">Diagnosis</CardTitle>
+                    </CardHeader>
+                    <CardBody>
+
+                      <Form>
+                        <Row>
+                          <Col className="pr-1" md="3">
+                          <FormGroup>
+                          <label>Illness</label>
+                              <select className="form-control">
+                              <option>Select...</option>
+                                <option>Fever</option>
+                                <option>Colds</option>
+                                <option>Asthma</option>
+                                <option>Injuries</option>
+                                <option>Headache</option>
+                                <option>High Blood Pressure</option>
+                              </select>
+                          </FormGroup>
+                          </Col>
+    
+                        <Col className="pr-1" md="2">
+                            <FormGroup>
+                              <label>Blood Pressure (Optional)</label>
+                              <Input
+                               
+                                placeholder="mmHg"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+                          <Col className="pr-1" md="2">
+                            <FormGroup>
+                              <label>Pulse Rate (Optional)</label>
+                              <Input
+                                placeholder="Beats/min"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+                          
+                          <Col className="pr-1" md="2">
+                            <FormGroup>
+                              <label>Body Temp.(Optional)</label>
+                              <Input
+                                placeholder="Celcius"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+
+                          <Col className="pr-1" md="2">
+                            <FormGroup>
+                              <label>Sugar Level (Optional)</label>
+                              <Input
+                                placeholder="Sugar Level"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+                        </Row>
+                        <CardHeader>
+                      <CardTitle tag="h5">Nursing Care</CardTitle>
+                    </CardHeader>
+
+                        <Row>
+                        <Col className="pr-1" md="3">
+                            <FormGroup>
+                              <label>Brand Name</label>
+                              <Input
+                                placeholder="Generic Name"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+ 
+                        <Col className="pr-1" md="3">
+                            <FormGroup>
+                              <label>Generic Name</label>
+                              <Input
+                                placeholder="Generic Name"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+ 
+                        <Col className="pr-1" md="2">
+                            <FormGroup>
+                              <label>Dosage</label>
+                              <Input
+                                placeholder="Dosage"
+                                type="number"
+                              />
+                            </FormGroup>
+                          </Col>
+
+                          <Col className="pr-1" md="2">
+                          <FormGroup>
+                          <label>Unit</label>
+                              <select className="form-control">
+                              <option>Select...</option>
+                                <option>mg (milligram)</option>
+                                <option>g (gram)</option>
+                                <option>ml (milliliter)</option>
+                                <option>oz (ounce)</option>
+                              </select>
+                          </FormGroup>
+                          </Col>
+
+                          <Col className="pr-1" md="1">
+                            <FormGroup>
+                              <label>Quantity</label>
+                              <Input
+                                placeholder="Qty"
+                                type="number"
+                              />
+                            </FormGroup>
+                          </Col>
+                        </Row>
+
+
+
+
+                        <Row>
+                          <div className="update ml-auto mr-auto">
+                          <Row>
+                          <div className="update ml-auto mr-auto">
+                            <Button
+                              className="btn-round"
+                              color="primary"
+                              type="submit">
+                              Done
+                            </Button>
+                          </div>
+                        </Row>
+                          </div>
+                        </Row>
+                      </Form>
+                    </CardBody>
+                  </Card>
+                </Col>
+              </Row>
+            </TabPane>
+
           </TabContent>
       </div>
     </>

@@ -29,15 +29,16 @@ server.post('/login',(req,res) => {
                     console.log(err);
                 }
             const user = rows.map( (row) => {
-               return row.Account_UserType +":"+row.Account_Username + ":" + row.Account_Password;
+               return {
+                   row.Account_UserType +
+                   row.Account_Username 
+                 row.Account_Password };
             })
                 if (user.length === 1){
                     res.send('Successfully Login!!!');
                 } else {
                     res.send('Successfully Login!!!');
-                    
                 }
-
             db.close();   
         }); 
     
@@ -59,7 +60,7 @@ server.post('/addAccount', (req, res) => {
                     res.send("Successfully Added");
                 }
                 db.close();
-            });
+         });
 });
 
 server.listen(3001, () => {
