@@ -18,6 +18,7 @@
 */
 import React from "react";
 
+
 // reactstrap components
 import {
   Button,
@@ -31,9 +32,10 @@ import {
   Input,
   Row,
   Col
+
 } from "reactstrap";
 
-class User extends React.Component {
+class PatientInfo2 extends React.Component {
   render() {
     return (
       <>
@@ -50,7 +52,7 @@ class User extends React.Component {
                     <Row>
                       <Col className="pr-1" md="4">
                       <FormGroup>
-                          <label>ID No.</label>
+                          <label>oooooo</label>
                           <Input
                             
                             placeholder="Enter ID No."
@@ -70,8 +72,13 @@ class User extends React.Component {
                          
                        </FormGroup>
                      </Col>
-                     
-                     
+
+                     <Col className="pr-1" md="2">
+                       <FormGroup>
+                         <label>Birth Date</label>
+                         <input type="date" class="form-control" placeholder="month"/>
+                       </FormGroup>
+                     </Col>
                      
                     </Row>
                     <Row>
@@ -79,7 +86,6 @@ class User extends React.Component {
                         <FormGroup>
                           <label>First Name</label>
                           <Input
-                            
                             placeholder="First Name"
                             type="text"
                           />
@@ -106,6 +112,7 @@ class User extends React.Component {
                         </FormGroup>
                       </Col>
                     </Row>
+
                     <Row>
                     <Col className="pr-1" md="4">
                        <FormGroup>
@@ -118,9 +125,9 @@ class User extends React.Component {
                             <option>CTE</option>
                             <option>CN</option>
                           </select>
-                         
                        </FormGroup>
                      </Col>
+                    
                      <Col className="pr-1" md="4">
                        <FormGroup>
                          <label>Course</label>
@@ -160,13 +167,17 @@ class User extends React.Component {
                     </Row>
                     <Row>
                       <div className="update ml-auto mr-auto">
-                        <Button
-                          className="btn-round"
-                          color="primary"
-                          type="submit"                          
-                        >
-                          Next
-                        </Button>
+                        <Row>
+                        <div className="update ml-auto mr-auto">
+                            <Button
+                            className="btn-round"
+                            color="primary"
+                            type="submit"                          
+                            >
+                            Next
+                            </Button>
+                        </div>
+                        </Row>
                       </div>
                     </Row>
                   </Form>
@@ -180,4 +191,4 @@ class User extends React.Component {
   }
 }
 
-export default User;
+export default PatientInfo2;

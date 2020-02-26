@@ -18,11 +18,13 @@
 */
 import Dashboard from "views/Dashboard.jsx";
 
-import Icons from "views/Icons.jsx";
-import Typography from "views/Typography.jsx";
-import TableList from "views/Tables.jsx";
+import PatientRecords from "views/PatientRecords.jsx";
+import Setting from "views/Setting.jsx";
+import Inventory from "views/Inventory.jsx";
 
-import UserPage from "views/User.jsx";
+import PatientInfo from "views/PatientInfo.jsx";
+
+
 
 
 var routes = [
@@ -34,34 +36,36 @@ var routes = [
     layout: "/admin"
   },
   {
-    path: "/user-page",
+    path: "/patient-transaction",
     name: "Patient Transaction",
     icon: "nc-icon nc-single-02",
-    component: UserPage,
+    component: PatientInfo, 
     layout: "/admin"
   },
+
+ 
   {
-    path: "/icons",
+    path: "/patient-records",
     name: "Patient Records",
     icon: "nc-icon nc-badge",
-    component: Icons,
+    component: PatientRecords,
     layout: "/admin"
   },
   {
-    path: "/tables",
+    path: "/inventory",
     name: "Inventory",
     icon: "nc-icon nc-tile-56",
-    component: TableList,
+    component: Inventory,
     layout: "/admin"
   },
   
   
   
   {
-    path: "/typography",
+    path: "/settings",
     name: "Setting",
     icon: "nc-icon nc-settings-gear-65",
-    component: Typography,
+    component: Setting,
     layout: "/admin"
   },
   
