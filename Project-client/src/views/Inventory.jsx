@@ -28,78 +28,80 @@ const ModalExample = (props) => {
                       <tr>
                         <th>Brand Name</th>
                         <th>Generic Name</th>
+                        <th>Dosage</th>
+                        <th>Unit</th>
                         <th>Storage Area</th>
                         <th>Expiry Date</th>
                         <th>Quantity</th>
-                        
                         <th>Remarks</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td>Bluh</td>
+                        <td>Biogesic</td>
+                        <td>Paracetamol</td>
+                        <td>50</td>
+                        <td>mg</td>
+                        <td>Storage B</td>
+                        <td>3/20/20</td>
                        <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
-                       
-                        <td>Bluh</td>
+                        <td>Remarks</td>
                       </tr>
+
                       <tr>
-                      <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td>Bluh</td>
-                        <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
-                       
-                       <td>Bluh</td>
+                        <td>Biogesic</td>
+                        <td>Paracetamol</td>
+                        <td>50</td>
+                        <td>mg</td>
+                        <td>Storage B</td>
+                        <td>3/20/20</td>
+                       <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
+                        <td>Remarks</td>
                       </tr>
+
                       <tr>
-                      <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td>Bluh</td>
-                        <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
-                       
-                       <td>Bluh</td>
+                        <td>Biogesic</td>
+                        <td>Paracetamol</td>
+                        <td>50</td>
+                        <td>mg</td>
+                        <td>Storage B</td>
+                        <td>3/20/20</td>
+                       <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
+                        <td>Remarks</td>
                       </tr>
+
                       <tr>
-                      <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td>Bluh</td>
-                        <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
-                       
-                       <td>Bluh</td>
+                        <td>Biogesic</td>
+                        <td>Paracetamol</td>
+                        <td>50</td>
+                        <td>mg</td>
+                        <td>Storage B</td>
+                        <td>3/20/20</td>
+                       <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
+                        <td>Remarks</td>
                       </tr>
+
+                     <tr>
+                        <td>Biogesic</td>
+                        <td>Paracetamol</td>
+                        <td>50</td>
+                        <td>mg</td>
+                        <td>Storage B</td>
+                        <td>3/20/20</td>
+                       <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
+                        <td>Remarks</td>
+                      </tr>
+
                       <tr>
-                      <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td>Bluh</td>
-                        <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
-                       
-                       <td>Bluh</td>
+                        <td>Biogesic</td>
+                        <td>Paracetamol</td>
+                        <td>50</td>
+                        <td>mg</td>
+                        <td>Storage B</td>
+                        <td>3/20/20</td>
+                       <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
+                        <td>Remarks</td>
                       </tr>
-                      <tr>
-                      <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td>Bluh</td>
-                        <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
-                       
-                       <td>Bluh</td>
-                      </tr>
-                      <tr>
-                      <td>Dakota Rice</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
-                        <td>Bluh</td>
-                        <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
-                       
-                       <td>Bluh</td>
-                      </tr>
-                      
                     </tbody>
                   </Table>
                   <button type="submit" class="btn-round btn btn-primary" >Add Medicine</button>
