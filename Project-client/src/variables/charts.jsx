@@ -33,8 +33,8 @@ const dashboard24HoursPerformanceChart = {
       ],
       datasets: [
         {
-          borderColor: "#6bd098",
-          backgroundColor: "#6bd098",
+          borderColor: "#6b1098",
+          
           pointRadius: 0,
           pointHoverRadius: 0,
           borderWidth: 3,
@@ -42,7 +42,7 @@ const dashboard24HoursPerformanceChart = {
         },
         {
           borderColor: "#f17e5d",
-          backgroundColor: "#f17e5d",
+         
           pointRadius: 0,
           pointHoverRadius: 0,
           borderWidth: 3,
@@ -50,7 +50,7 @@ const dashboard24HoursPerformanceChart = {
         },
         {
           borderColor: "#fcc468",
-          backgroundColor: "#fcc468",
+          
           pointRadius: 0,
           pointHoverRadius: 0,
           borderWidth: 3,

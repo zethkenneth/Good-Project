@@ -58,7 +58,7 @@ class Sidebar extends React.Component {
       >
         <div className="logo">
           <a
-            href="#"
+            href="#Logo"
             className="simple-text logo-mini"
           >
             <div className="logo-img">
@@ -66,7 +66,7 @@ class Sidebar extends React.Component {
             </div>
           </a>
           <a
-            href="#"
+            href="#Wmsu"
             className="simple-text logo-normal"
           >
             WMSU Clinic
