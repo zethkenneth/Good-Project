@@ -160,6 +160,7 @@ class Dashboard extends React.Component {
                     options={dashboard24HoursPerformanceChart.options}
                     width={400}
                     height={100}
+                  backgroundColor={'rgba(0,200,25,0.1)'}
                   />
                 </CardBody>
                 <CardFooter>

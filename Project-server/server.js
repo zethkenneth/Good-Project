@@ -40,25 +40,20 @@ server.post('/login',(req,res) => {
                 } else {
                     res.send('Invalid Login!!!');
                 }
-            db.close();   
         }); 
     
 });
 
 server.post('/addAccount', (req, res) => {
-
-
     let AccountName;
     let AccountUsertype;  
     let AccountUsername;  
     let AccountPassword;  
     let CreatedAt = new Date();
-
      AccountName = req.body.Account_Name;
      AccountUsertype =  req.body.Account_Usertype;
      AccountUsername =  req.body.Account_Username;
      AccountPassword =  req.body.Account_Password;
-     
 
    
     db.run('INSERT INTO Account (AccountName,AccountUsertype,AccountUsername,AccountPassword,CreatedAt) VALUES (?,?,?,?,?)', 
@@ -68,17 +63,51 @@ server.post('/addAccount', (req, res) => {
             AccountUsername,
             AccountPassword,
             CreatedAt
-
         ], (err) => {   
                 if (err) {
                     res.send("Error Inserted table: ", err);
                 } else {
                     res.send("Successfully Added");
                 }
-                db.close();
+                
          });
 });
 
+server.post('/addMedicine', (req, res) => {
+    let a = [
+        req.body.Generic_Name,
+        req.body.Brand_Name
+    ];
+
+    let query = "INSERT INTO Medicine (GenericName,BrandName) VALUES (?,?)"
+    db.serialize(() => {
+        db.run(query,a, (err) =>{
+            if (err) {
+                res.send("Error Inserted table: ", err);
+            } else {
+                res.send("Successfully ");
+            }
+        })
+    })
+});
+
+server.post('/addMedicine', (req, res) => {
+    let a = [
+        req.body.Generic_Name,
+        req.body.Brand_Name
+    ];
+
+    let query = "INSERT INTO Medicine (GenericName,BrandName) VALUES (?,?)"
+    db.serialize(() => {
+        db.run(query, a, (err) => {
+            if (err) {
+                res.send("Error Inserted table: ", err);
+            } else {
+                res.send("Successfully ");
+            }
+        })
+    })
+});
 
 
 server.listen(3001, () => {
