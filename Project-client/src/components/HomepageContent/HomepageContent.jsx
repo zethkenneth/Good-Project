@@ -2,11 +2,6 @@ import React from 'react';
 import med from 'assets/img/med.png';
 
 import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  CardTitle,
   Row,
   Col
 } from "reactstrap";
