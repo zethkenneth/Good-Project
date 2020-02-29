@@ -38,7 +38,7 @@ class Setting extends React.Component {
                   <Row>
                     <Col md="4" xs="5">
                       <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-single-02 text-warning" />
+                        <i className="nc-icon nc-single-02 text-primary" />
                       </div>
                     </Col>
                     <Col md="8" xs="7">

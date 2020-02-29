@@ -42,7 +42,6 @@ var routes = [
     component: PatientInfo, 
     layout: "/admin"
   },
-
  
   {
     path: "/patient-records",
@@ -68,6 +67,7 @@ var routes = [
     component: Setting,
     layout: "/admin"
   },
+  
   
   
 ];
