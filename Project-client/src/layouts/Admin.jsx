@@ -94,6 +94,7 @@ class Dashboard extends React.Component {
           handleBgClick={this.handleBgClick}
         />*/}
       </div>
+      
     );
   }
 }

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import classnames from 'classnames';
-
-
+import AccTable from "./AccTable";
 
 // reactstrap components
 import {
@@ -40,14 +39,14 @@ const PatientInfo = (props) => {
                 className={classnames({ active: activeTab === '1' })}
                 onClick={() => { toggle('1'); }}
               >
-                Patient Form
+                Account
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
                 className={classnames({ active: activeTab === '2' })}
                 onClick={() => { toggle('2'); }}
-              >Adviser Form
+              >Storage
               </NavLink>
             </NavItem>
 
@@ -55,7 +54,7 @@ const PatientInfo = (props) => {
               <NavLink
                 className={classnames({ active: activeTab === '3' })}
                 onClick={() => { toggle('3'); }}
-              >Diagnosis
+              >Notification
               </NavLink>
             </NavItem>
 
@@ -67,133 +66,86 @@ const PatientInfo = (props) => {
                 <Col sm="12">
                   <Card className="card-user">
                     <CardHeader>
-                      <CardTitle tag="h5">Patient Information</CardTitle>
+                      <CardTitle tag="h5">Account</CardTitle>
                     </CardHeader>
                     <CardBody>
                       <Form>
                         <Row>
-                          <Col className="pr-1" md="3">
+                          <Col className="pr-1" md="5">
                           <FormGroup>
-                              <label>ID No.</label>
+                              <label>Account ID</label>
                               <Input
                                 
-                                placeholder="Enter ID No."
+                                placeholder="Account ID"
                                 type="text"
                               />
                             </FormGroup>
                           </Col>
                          
-                         
+                          <Col className="pr-1" md="2">
+                          <FormGroup>
+                          <label>Account Type</label>
+                              <select className="form-control">
+                              <option>Select...</option>
+                                <option>Admin</option>
+                                <option>Clinic Staff</option>
+                                <option>Clinic Assistant</option>
+                               
+                              </select>
+                          </FormGroup>
+                          </Col>
                         </Row>
                         <Row>
-                        <Col className="pr-1" md="3">
+                        <Col className="pr-1" md="5">
                             <FormGroup>
-                              <label>Last Name</label>
+                              <label>Account Name</label>
                               <Input
                                
-                                placeholder="Last Name"
-                                type="text"
-                              />
-                            </FormGroup>
-                          </Col>
-                          <Col className="pr-1" md="3">
-                            <FormGroup>
-                              <label>First Name</label>
-                              <Input
-                                placeholder="First Name"
+                                placeholder="Account Name"
                                 type="text"
                               />
                             </FormGroup>
                           </Col>
                           
-                          <Col className="pr-1" md="3">
+                          
+                          <Col className="pr-1" md="5">
                             <FormGroup>
-                              <label>Middle Name</label>
+                              <label>Account Status</label>
                               <Input
                                
-                                placeholder="Middle Name"
+                                placeholder="Account Status"
                                 type="text"
                               />
                             </FormGroup>
                           </Col>
-
-                          <Col className="pr-1" md="2">
+                          </Row>
+                          <Row>
+                          <Col className="pr-1" md="5">
                             <FormGroup>
-                              <label>Extension Name</label>
+                              <label>Username</label>
                               <Input
                                
-                                placeholder="Ext Name"
+                                placeholder="Username"
                                 type="text"
                               />
                             </FormGroup>
                           </Col>
-                        </Row>
-                        <Row>
-                        <Col className="pr-1" md="3">
-                           <FormGroup>
-                             <label>Sex</label>
-                              <select className="form-control">
+                          
+                          <Col className="pr-1" md="5">
+                            <FormGroup>
+                              <label>Password</label>
+                              <Input
                                
-                              <option>Select..</option>
-                                <option>Male</option>
-                                <option>Female</option>
-                              </select>
-                             
-                           </FormGroup>
-                         </Col>
-
-                         <Col className="pr-1" md="3">
-                           <FormGroup>
-                             <label>Birth Date</label>
-                             <input type="date" className="form-control" placeholder="month"/>
-                           </FormGroup>
-                         </Col>
-                        </Row>
-
-                        <Row>
-                        <Col className="pr-1" md="3">
-                           <FormGroup>
-                             <label>College</label>
-                              <select className="form-control">
-                               
-                              <option>Select..</option>
-                                <option>ICS</option>
-                                <option>CET</option>
-                                <option>CTE</option>
-                                <option>CN</option>
-                              </select>
-                           </FormGroup>
-                         </Col>
+                                placeholder="Password"
+                                type="text"
+                              />
+                            </FormGroup>
+                          </Col>
+                          
+                          </Row>
                         
-                         <Col className="pr-1" md="3">
-                           <FormGroup>
-                             <label>Course</label>
-                              <select className="form-control">
-                               
-                              <option>Select..</option>
-                                <option>Department of Computer Engineering</option>
-                                <option>Department of Computer Education</option>
-                                <option>Department of Civil Engineering</option>
-                                <option>CN</option>
-                              </select>
-                             
-                           </FormGroup>
-                         </Col>
-                         <Col className="pr-1" md="3">
-                           <FormGroup>
-                             <label>Year</label>
-                              <select className="form-control">
-                               
-                              <option>Select..</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                              </select>
-                             
-                           </FormGroup>
-                         </Col>
-                        </Row>
+
+                       
                        
                         <Row>
                           <div className="update ml-auto mr-auto">
@@ -203,7 +155,7 @@ const PatientInfo = (props) => {
                               className="btn-round"
                               color="primary"
                               type="submit">
-                              Next
+                              Save
                             </Button>
                           </div>
                         </Row>
@@ -222,7 +174,7 @@ const PatientInfo = (props) => {
                 <Col sm="12">
                   <Card className="card-user">
                     <CardHeader>
-                      <CardTitle tag="h5">Adviser's Information</CardTitle>
+                      <CardTitle tag="h5">Storage</CardTitle>
                     </CardHeader>
                     <CardBody>
                       <Form>
@@ -239,21 +191,7 @@ const PatientInfo = (props) => {
                          
                    
                        
-                        <Col className="pr-1" md="3">
-                           <FormGroup>
-                             <label>Department (College, ILS, SHS)</label>
-                              <select className="form-control">
-                               
-                              <option>Select..</option>
-                                <option>ICS</option>
-                                <option>CET</option>
-                                <option>CTE</option>
-                                <option>CN</option>
-                                <option>ILS</option>
-                                <option>SHS</option>
-                              </select>
-                           </FormGroup>
-                         </Col>
+                         
 
                          <Col className="pr-1" md="3">
                             <FormGroup>
@@ -514,8 +452,8 @@ const PatientInfo = (props) => {
             </TabPane>
 
           </TabContent>
+          <AccTable/>
       </div>
-      
     </>
     );
   }
