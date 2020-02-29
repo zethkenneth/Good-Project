@@ -17,141 +17,114 @@
 
 */
 import React from "react";
-
+// react plugin used to create charts
+import { Line, Pie } from "react-chartjs-2";
 // reactstrap components
-import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  CardTitle,
+  Row,
+  Col
+} from "reactstrap";
+// core components
+import {
+  dashboard24HoursPerformanceChart,
+  dashboardEmailStatisticsChart,
+  dashboardNASDAQChart
+} from "variables/charts.jsx";
 
 class Setting extends React.Component {
   render() {
     return (
       <>
-        <div className="content">
-          <Row>
-            <Col md="12">
-              <Card>
-                <CardHeader>
-                  <h5 className="title">Paper Table Heading</h5>
-                  <p className="category">
-                    Created using Montserrat Font Family
-                  </p>
-                </CardHeader>
+         <div className="content">
+        <Row>
+            <Col lg="3" md="6" sm="6">
+              <Card className="card-stats">
                 <CardBody>
-                  <div className="typography-line">
-                    <h1>
-                      <span>Header 1</span>
-                      The Life of Paper Dashboard
-                    </h1>
-                  </div>
-                  <div className="typography-line">
-                    <h2>
-                      <span>Header 2</span>
-                      The Life of Paper Dashboard
-                    </h2>
-                  </div>
-                  <div className="typography-line">
-                    <h3>
-                      <span>Header 3</span>
-                      The Life of Paper Dashboard
-                    </h3>
-                  </div>
-                  <div className="typography-line">
-                    <h4>
-                      <span>Header 4</span>
-                      The Life of Paper Dashboard
-                    </h4>
-                  </div>
-                  <div className="typography-line">
-                    <h5>
-                      <span>Header 5</span>
-                      The Life of Paper Dashboard
-                    </h5>
-                  </div>
-                  <div className="typography-line">
-                    <h6>
-                      <span>Header 6</span>
-                      The Life of Paper Dashboard
-                    </h6>
-                  </div>
-                  <div className="typography-line">
-                    <p>
-                      <span>Paragraph</span>I will be the leader of a company
-                      that ends up being worth billions of dollars, because I
-                      got the answers. I understand culture. I am the nucleus. I
-                      think that’s a responsibility that I have, to push
-                      possibilities, to show people, this is the level that
-                      things could be at.
-                    </p>
-                  </div>
-                  <div className="typography-line">
-                    <span>Quote</span>
-                    <blockquote>
-                      <p className="blockquote blockquote-primary">
-                        "I will be the leader of a company that ends up being
-                        worth billions of dollars, because I got the answers. I
-                        understand culture. I am the nucleus. I think that’s a
-                        responsibility that I have, to push possibilities, to
-                        show people, this is the level that things could be at."{" "}
-                        <br />
-                        <br />
-                        <small>- Noaa</small>
-                      </p>
-                    </blockquote>
-                  </div>
-                  <div className="typography-line">
-                    <span>Muted Text</span>
-                    <p className="text-muted">
-                      I will be the leader of a company that ends up being worth
-                      billions of dollars, because I got the answers...
-                    </p>
-                  </div>
-                  <div className="typography-line">
-                    <span>Primary Text</span>
-                    <p className="text-primary">
-                      I will be the leader of a company that ends up being worth
-                      billions of dollars, because I got the answers...
-                    </p>
-                  </div>
-                  <div className="typography-line">
-                    <span>Info Text</span>
-                    <p className="text-info">
-                      I will be the leader of a company that ends up being worth
-                      billions of dollars, because I got the answers...
-                    </p>
-                  </div>
-                  <div className="typography-line">
-                    <span>Success Text</span>
-                    <p className="text-success">
-                      I will be the leader of a company that ends up being worth
-                      billions of dollars, because I got the answers...
-                    </p>
-                  </div>
-                  <div className="typography-line">
-                    <span>Warning Text</span>
-                    <p className="text-warning">
-                      I will be the leader of a company that ends up being worth
-                      billions of dollars, because I got the answers...
-                    </p>
-                  </div>
-                  <div className="typography-line">
-                    <span>Danger Text</span>
-                    <p className="text-danger">
-                      I will be the leader of a company that ends up being worth
-                      billions of dollars, because I got the answers...
-                    </p>
-                  </div>
-                  <div className="typography-line">
-                    <h2>
-                      <span>Small Tag</span>
-                      Header with small subtitle <br />
-                      <small>Use "small" tag for the headers</small>
-                    </h2>
-                  </div>
+                  <Row>
+                    <Col md="4" xs="5">
+                      <div className="icon-big text-center icon-warning">
+                        <i className="nc-icon nc-single-02 text-warning" />
+                      </div>
+                    </Col>
+                    <Col md="8" xs="7">
+                      <div className="numbers">
+                        <p className="card-category">Account</p>
+                        <CardTitle tag="p">0</CardTitle>
+                        <p />
+                      </div>
+                    </Col>
+                  </Row>
                 </CardBody>
+                <CardFooter>
+                  <hr />
+                  <div className="stats">
+                    <i className="fas fa-sync-alt" /> Update Now
+                  </div>
+                </CardFooter>
+              </Card>
+            </Col>
+            <Col lg="3" md="6" sm="6">
+              <Card className="card-stats">
+                <CardBody>
+                  <Row>
+                    <Col md="4" xs="5">
+                      <div className="icon-big text-center icon-warning">
+                        <i className="nc-icon nc-money-coins text-success" />
+                      </div>
+                    </Col>
+                    <Col md="8" xs="7">
+                      <div className="numbers">
+                        <p className="card-category">Storage</p>
+                        <CardTitle tag="p">0</CardTitle>
+                        <p />
+                      </div>
+                    </Col>
+                  </Row>
+                </CardBody>
+                <CardFooter>
+                  <hr />
+                  <div className="stats">
+                    <i className="far fa-calendar" /> Last day
+                  </div>
+                </CardFooter>
+              </Card>
+            </Col>
+            <Col lg="3" md="6" sm="6">
+              <Card className="card-stats">
+                <CardBody>
+                  <Row>
+                    <Col md="4" xs="5">
+                      <div className="icon-big text-center icon-warning">
+                        <i className="nc-icon nc-bell-55 text-primary" />
+                      </div>
+                    </Col>
+                    <Col md="8" xs="7">
+                      <div className="numbers">
+                        <p className="card-category">Notification</p>
+                        <CardTitle tag="p">0</CardTitle>
+                        <p />
+                      </div>
+                    </Col>
+                  </Row>
+                </CardBody>
+                <CardFooter>
+                  <hr />
+                  <div className="stats">
+                    <i className="far fa-clock" /> In the last hour
+                  </div>
+                </CardFooter>
               </Card>
             </Col>
           </Row>
+         
+          
         </div>
-      </>
+ </>
     );
   }
 }

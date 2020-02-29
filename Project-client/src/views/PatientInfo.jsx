@@ -459,9 +459,9 @@ const PatientInfo = (props) => {
  
                         <Col className="pr-1" md="2">
                             <FormGroup>
-                              <label>Dosage</label>
+                              <label>Dose</label>
                               <Input
-                                placeholder="Dosage"
+                                placeholder="Dose"
                                 type="number"
                               />
                             </FormGroup>

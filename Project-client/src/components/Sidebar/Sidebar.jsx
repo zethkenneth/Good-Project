@@ -51,6 +51,7 @@ class Sidebar extends React.Component {
   }
   render() {
     return (
+      
       <div
         className="sidebar"
         data-color={this.props.bgColor}

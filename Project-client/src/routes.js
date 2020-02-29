@@ -69,5 +69,6 @@ var routes = [
     layout: "/admin"
   },
   
+  
 ];
 export default routes;

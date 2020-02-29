@@ -1879,7 +1879,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
     display: inline-block;
     margin: 0;
     line-height: 1.8em;
-    font-size: 1em;
+    font-size: 200px;
     font-weight: 400; }
   .navbar.navbar-absolute {
     position: absolute;
