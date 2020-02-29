@@ -17,7 +17,11 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+<<<<<<< HEAD
       backgroundColor: "white",
+=======
+      backgroundColor: 'blue',
+>>>>>>> a9562944ec5aad4aa886b00e4b2ea550e65da16e
       activeColor: "info"
     };
     this.mainPanel = React.createRef();
@@ -40,19 +44,14 @@ class Dashboard extends React.Component {
       document.scrollingElement.scrollTop = 0;
     }
   }
-  handleActiveClick = color => {
-    this.setState({ activeColor: color });
-  };
-  handleBgClick = color => {
-    this.setState({ backgroundColor: color });
-  };
+
   render() {
     return (
       <div className="wrapper">
         <Sidebar
           {...this.props}
           routes={routes}
-          bgColor={this.state.backgroundColor}
+          bgColor="blue"
           activeColor={this.state.activeColor}
         />
         <div className="main-panel" ref={this.mainPanel}>

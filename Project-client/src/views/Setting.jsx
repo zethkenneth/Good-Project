@@ -17,6 +17,7 @@
 
 */
 import React from "react";
+<<<<<<< HEAD
 // react plugin used to create charts
 import { Line, Pie } from "react-chartjs-2";
 // reactstrap components
@@ -35,11 +36,14 @@ import {
   dashboardEmailStatisticsChart,
   dashboardNASDAQChart
 } from "variables/charts.jsx";
+=======
+>>>>>>> a9562944ec5aad4aa886b00e4b2ea550e65da16e
 
 class Setting extends React.Component {
   render() {
     return (
       <>
+<<<<<<< HEAD
          <div className="content">
         <Row>
             <Col lg="3" md="6" sm="6">
@@ -122,6 +126,9 @@ class Setting extends React.Component {
             </Col>
           </Row>
          
+=======
+        <div className="content">
+>>>>>>> a9562944ec5aad4aa886b00e4b2ea550e65da16e
           
         </div>
  </>

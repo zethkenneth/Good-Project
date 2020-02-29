@@ -54,12 +54,12 @@ class Sidebar extends React.Component {
       
       <div
         className="sidebar"
-        data-color={this.props.bgColor}
+        data-color="blue"
         data-active-color={this.props.activeColor}
       >
         <div className="logo">
           <a
-            href="#"
+            href="#Logo"
             className="simple-text logo-mini"
           >
             <div className="logo-img">
@@ -67,7 +67,7 @@ class Sidebar extends React.Component {
             </div>
           </a>
           <a
-            href="#"
+            href="#Wmsu"
             className="simple-text logo-normal"
           >
             WMSU Clinic

@@ -3,11 +3,32 @@ import { Link } from 'react-router-dom';
 import wmsu from 'assets/img/wmsu.png';
 
 class Login extends React.Component {
-    constructor() {
+ constructor(){
         super();
         this.state = {
-
+            signInUsername: '',
+            signInPassword: ''
         }
+    }
+
+    onUsernameChange = (event) => {
+        this.setState({signInUsername: event.target.value});
+    }
+
+    onPasswordChange = (event) => {
+        this.setState({signInPassword: event.target.value});
+    }
+
+
+    onSubmitSignIn = () => { 
+        fetch('http://localhost:3001/login',{
+            method: 'post',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                Account_Username: this.state.signInUsername,
+                Account_Password: this.state.signInPassword
+            })
+        }); 
     }
 
     render(){
@@ -20,7 +41,7 @@ class Login extends React.Component {
                                 <img id="wmsu" src={wmsu} alt="" />
                                 <h1>Welcome!</h1>
                                 <input
-                                    
+                                    onChange={this.onUsernameChange}
                                     type="string"
                                     className="form-control"
                                     id="exampleInputEmail1"
@@ -29,11 +50,10 @@ class Login extends React.Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                                <input onChange={this.onPasswordChange} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                             </div>
                             <Link to="/admin/dashboard">
-                                <button
-                                    
+                                <button onClick={this.onSubmitSignIn}
                                     type="submit"
                                     className="btn btn-primary btn-block">Log In</button></Link>
                             <a href="forgotPassword ">Forgot Password?</a>
