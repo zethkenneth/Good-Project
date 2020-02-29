@@ -1,4 +1,6 @@
 import React from 'react';
+import { Container } from 'reactstrap';
+
 import HomepageContent from '../components/HomepageContent/HomepageContent.jsx';
 import HomepageNavbar from '../components/HomepageNavbar/HomepageNavbar.jsx';
 import HomepageFooter from '../components/HomepageFooter/HomepageFooter.jsx';
@@ -15,8 +17,10 @@ class Homepage extends React.Component {
         return(
             <div>
                 <HomepageNavbar />
-                <HomepageContent />
-                <HomepageFooter />
+                <Container>
+                    <HomepageContent />
+                </Container>
+                <HomepageFooter fluid />
             </div>
         );
     };
