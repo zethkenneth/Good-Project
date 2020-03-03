@@ -48,12 +48,11 @@ class Sidebar extends React.Component {
     if (navigator.platform.indexOf("Win") > -1) {
       ps.destroy();
     }
-  }
-  render() {
+   render() {
     return (
       <div
         className="sidebar"
-        data-color="blue"
+        data-color={this.props.bgColor}
         data-active-color={this.props.activeColor}
       >
         <div className="logo">
