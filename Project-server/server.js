@@ -5,7 +5,7 @@ const sqlite3 = require('sqlite3').verbose();
 const cors = require('cors');
 
 //Configure the Database
-const db_path = './ClinicDatabase.db'
+const db_path = './WMSUClinicDatabase.db'
 let db = new sqlite3.Database(db_path);
 
 const server = express();
@@ -19,7 +19,7 @@ server.get('/', (req, res) =>{
 
 
 server.post('/login',(req,res) => {
-    db.all('Select * from Account where Account_Username = ? and Account_Password = ?',
+    db.all('Select * from Account where AccountUsername = ? and AccountPassword = ?',
         [
             req.body.Account_Username,
             req.body.Account_Password
@@ -30,38 +30,85 @@ server.post('/login',(req,res) => {
                 }
             const user = rows.map( (row) => {
                return {
-                   row.Account_UserType +
-                   row.Account_Username 
-                 row.Account_Password };
+                  usertype: row.Account_UserType,
+                  username: row.Account_Username, 
+                  password:  row.Account_Password
+                 };
             })
                 if (user.length === 1){
                     res.send('Successfully Login!!!');
                 } else {
-                    res.send('Successfully Login!!!');
+                    res.send('Invalid Login!!!');
                 }
-            db.close();   
         }); 
     
 });
 
 server.post('/addAccount', (req, res) => {
-   
-    db.run('INSERT INTO Account (Account_Name,Account_Usertype,Account_Username,Account_Password) VALUES (?,?,?,?)', 
-        [
-            req.body.Account_Name,
-            req.body.Account_UserType,
-            req.body.Account_Username,
-            req.body.Account_Password
+    let AccountName;
+    let AccountUsertype;  
+    let AccountUsername;  
+    let AccountPassword;  
+    let CreatedAt = new Date();
+     AccountName = req.body.Account_Name;
+     AccountUsertype =  req.body.Account_Usertype;
+     AccountUsername =  req.body.Account_Username;
+     AccountPassword =  req.body.Account_Password;
 
+   
+    db.run('INSERT INTO Account (AccountName,AccountUsertype,AccountUsername,AccountPassword,CreatedAt) VALUES (?,?,?,?,?)', 
+        [
+            AccountName,
+            AccountUsertype,
+            AccountUsername,
+            AccountPassword,
+            CreatedAt
         ], (err) => {   
                 if (err) {
                     res.send("Error Inserted table: ", err);
                 } else {
                     res.send("Successfully Added");
                 }
-                db.close();
+                
          });
 });
+
+server.post('/addMedicine', (req, res) => {
+    let a = [
+        req.body.Generic_Name,
+        req.body.Brand_Name
+    ];
+
+    let query = "INSERT INTO Medicine (GenericName,BrandName) VALUES (?,?)"
+    db.serialize(() => {
+        db.run(query,a, (err) =>{
+            if (err) {
+                res.send("Error Inserted table: ", err);
+            } else {
+                res.send("Successfully ");
+            }
+        })
+    })
+});
+
+server.post('/addMedicine', (req, res) => {
+    let a = [
+        req.body.Generic_Name,
+        req.body.Brand_Name
+    ];
+
+    let query = "INSERT INTO Medicine (GenericName,BrandName) VALUES (?,?)"
+    db.serialize(() => {
+        db.run(query, a, (err) => {
+            if (err) {
+                res.send("Error Inserted table: ", err);
+            } else {
+                res.send("Successfully ");
+            }
+        })
+    })
+});
+
 
 server.listen(3001, () => {
     console.log("Server running in port 3001");

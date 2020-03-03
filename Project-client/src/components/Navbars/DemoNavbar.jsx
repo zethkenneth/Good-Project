@@ -17,14 +17,12 @@
 
 */
 import React from "react";
-import { Link } from "react-router-dom";
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
@@ -43,11 +41,13 @@ class Header extends React.Component {
     super(props);
     this.state = {
       isOpen: false,
-      dropdownOpen: false,
+      notifDropdownOpen: false,
+      acctDropdownOpen: false,
       color: "transparent"
     };
     this.toggle = this.toggle.bind(this);
-    this.dropdownToggle = this.dropdownToggle.bind(this);
+    this.notifDropdownToggle = this.notifDropdownToggle.bind(this);
+    this.acctDropdownToggle = this.acctDropdownToggle.bind(this);
     this.sidebarToggle = React.createRef();
   }
   toggle() {
@@ -64,9 +64,14 @@ class Header extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
-  dropdownToggle(e) {
+  notifDropdownToggle(e) {
     this.setState({
-      dropdownOpen: !this.state.dropdownOpen
+      notifDropdownOpen: !this.state.notifDropdownOpen
+    });
+  }
+  acctDropdownToggle(e) {
+    this.setState({
+      acctDropdownOpen: !this.state.acctDropdownOpen
     });
   }
   getBrand() {
@@ -162,18 +167,11 @@ class Header extends React.Component {
               </InputGroup>
             </form>
             <Nav navbar>
-              <NavItem>
-                <Link to="#pablo" className="nav-link btn-magnify">
-                  <i className="nc-icon nc-layout-11" />
-                  <p>
-                    <span className="d-lg-none d-md-block">Stats</span>
-                  </p>
-                </Link>
-              </NavItem>
+            
               <Dropdown
                 nav
-                isOpen={this.state.dropdownOpen}
-                toggle={e => this.dropdownToggle(e)}
+                isOpen={this.state.notifDropdownOpen}
+                toggle={e => this.notifDropdownToggle(e)}
               >
                 <DropdownToggle caret nav>
                   <i className="nc-icon nc-bell-55" />
@@ -187,14 +185,27 @@ class Header extends React.Component {
                   <DropdownItem tag="a">Something else here</DropdownItem>
                 </DropdownMenu>
               </Dropdown>
-              <NavItem>
-                <Link to="#pablo" className="nav-link btn-rotate">
-                  <i className="nc-icon nc-settings-gear-65" />
+
+              <Dropdown
+                nav
+                isOpen={this.state.acctDropdownOpen}
+                toggle={e => this.acctDropdownToggle(e)}
+              >
+                <DropdownToggle caret nav>
+                  <i className="nc-icon nc-single-02 text-primary" />
                   <p>
-                    <span className="d-lg-none d-md-block">Account</span>
+                    <span className="d-lg-none d-md-block">Some Actions</span>
                   </p>
-                </Link>
-              </NavItem>
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem tag="a">Account</DropdownItem>
+                  <DropdownItem tag="a">Logout</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+
+             
+               
+             
             </Nav>
           </Collapse>
         </Container>
