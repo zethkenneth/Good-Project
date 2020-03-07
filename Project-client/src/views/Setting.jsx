@@ -1,22 +1,17 @@
 /*!
-
 =========================================================
 * Paper Dashboard React - v1.1.0
 =========================================================
-
 * Product Page: https://www.creative-tim.com/product/paper-dashboard-react
 * Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
 * Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/master/LICENSE.md)
-
 * Coded by Creative Tim
-
 =========================================================
-
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 */
 import React from "react";
+import AccForm from "./AccForm"
+
 import {
   Card,
   CardBody,
@@ -38,7 +33,7 @@ class Setting extends React.Component {
                   <Row>
                     <Col md="4" xs="5">
                       <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-single-02 text-warning" />
+                        <i className="nc-icon nc-single-02 text-primary" />
                       </div>
                     </Col>
                     <Col md="8" xs="7">
@@ -111,12 +106,14 @@ class Setting extends React.Component {
               </Card>
             </Col>
           </Row>
+          <AccForm/>
+       
          
           
         </div>
+
  </>
     );
   }
 }
-
 export default Setting;

@@ -192,7 +192,7 @@ class Header extends React.Component {
                 toggle={e => this.acctDropdownToggle(e)}
               >
                 <DropdownToggle caret nav>
-                  <i className="nc-icon nc-settings-gear-65" />
+                  <i className="nc-icon nc-single-02 text-primary" />
                   <p>
                     <span className="d-lg-none d-md-block">Some Actions</span>
                   </p>
