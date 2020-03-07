@@ -63,7 +63,7 @@
   width: 100%;
   background: transparent;
   bottom: 0;
-  color: #fff;
+  color: rgba(0, 0, 255, 0.431);
   z-index: 1;
 }
 
@@ -204,4 +204,8 @@
   box-shadow: none;
   outline: none;
   display: none;
+}
+.sidebar {
+  color: skyblue;
+
 }
