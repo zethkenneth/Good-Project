@@ -57,18 +57,16 @@ class SettingTabs extends React.Component {
 
 
   onSubmitAddAccount = () => {
-    // Store data
-    var someData = {
-      name: zeth,
-      hobby: programming
-    }
-    localStorage.setItem('myDatakey',someData);
-
-    // Get data
-    var data = localStorage.getItem('myDataKey');
-    console.log(data);
-
-    
+    fetch('http://localhost:3001/admin/settings', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        Account_Username: this.state.Username,
+        Account_Password: this.state.Password,
+        Account_Name: this.state.AccountName,
+        Account_UserType: this.state.AccountType
+      })
+    });
   }
   render(){
     return (
