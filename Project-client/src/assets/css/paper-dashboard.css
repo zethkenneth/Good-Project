@@ -323,7 +323,7 @@ Copyright (c) 2015 Daniel Eden
   .navbar .navbar-nav > a.btn.dropdown-toggle:focus,
   .show >
   .navbar .navbar-nav > a.btn.dropdown-toggle:hover {
-    background-color: #403D39 !important;
+    background-color: #1d344a !important;
     color: #FFFFFF !important;
     box-shadow: none !important; }
   .btn:not([data-action]):hover,
@@ -474,13 +474,13 @@ Copyright (c) 2015 Daniel Eden
     top: 1px; }
 
 .btn-primary {
-  background-color: #51cbce;
+  background-color: #0083ce;
   color: #FFFFFF; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary.active:focus, .btn-primary.active:hover,
   .show > .btn-primary.dropdown-toggle,
   .show > .btn-primary.dropdown-toggle:focus,
   .show > .btn-primary.dropdown-toggle:hover {
-    background-color: #34b5b8 !important;
+    background-color: #1d344a !important;
     color: #FFFFFF !important;
     box-shadow: none !important; }
   .btn-primary:not([data-action]):hover {
@@ -506,7 +506,7 @@ Copyright (c) 2015 Daniel Eden
     color: #51cbce; }
     .btn-primary.btn-link:hover, .btn-primary.btn-link:focus, .btn-primary.btn-link:active, .btn-primary.btn-link:active:focus {
       background-color: transparent;
-      color: #34b5b8;
+      color: #1d344a;
       text-decoration: none;
       box-shadow: none; }
 
@@ -529,21 +529,21 @@ Copyright (c) 2015 Daniel Eden
   fieldset[disabled] .btn-success.focus,
   fieldset[disabled] .btn-success:active,
   fieldset[disabled] .btn-success.active {
-    background-color: #6bd098;
-    border-color: #6bd098; }
+    background-color: #1d344a;
+    border-color: #1d344a; }
   .btn-success.btn-simple {
-    color: #6bd098;
-    border-color: #6bd098; }
+    color: #1d344a;
+    border-color: #1d344a; }
     .btn-success.btn-simple:hover, .btn-success.btn-simple:focus, .btn-success.btn-simple:active {
       background-color: transparent;
-      color: #44c47d;
-      border-color: #44c47d;
+      color: #1d344a;
+      border-color: #1d344a;
       box-shadow: none; }
   .btn-success.btn-link {
-    color: #6bd098; }
+    color: #1d344a; }
     .btn-success.btn-link:hover, .btn-success.btn-link:focus, .btn-success.btn-link:active, .btn-success.btn-link:active:focus {
       background-color: transparent;
-      color: #44c47d;
+      color: #1d344a;
       text-decoration: none;
       box-shadow: none; }
 
@@ -1014,7 +1014,7 @@ fieldset[disabled]
 
 .btn-round {
   border-width: 1px;
-  border-radius: 30px;
+  border-radius: 20px;
   padding-right: 23px;
   padding-left: 23px; }
   .btn-round.btn-simple {
