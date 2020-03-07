@@ -32,6 +32,8 @@ class Login extends React.Component {
     }
 
     render(){
+
+        
         return (
             <section className="container-fluid">
                 <section className="row justify-content-center">
