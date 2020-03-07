@@ -20,7 +20,7 @@ const ModalExample = (props) => {
               <Card>
                 <CardHeader>
                   <CardTitle tag="h4">Medicine List</CardTitle>
-                  <input placeholder="Search..." type="text" class="form-control" style={{width:'200px'}}></input>
+                  <input placeholder="Search..." type="text" className="form-control" style={{width:'200px'}}></input>
                 </CardHeader>
                 <CardBody>
                   <Table responsive>
@@ -112,15 +112,14 @@ const ModalExample = (props) => {
           </Row> 
       
       <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Load Medicine</ModalHeader>
-        <ModalBody>
-
-         Load form dzai
-        </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={toggle}>Save</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
-        </ModalFooter>
+            <ModalHeader toggle={toggle}>Load Medicine</ModalHeader>
+              <ModalBody>
+              Load form dzai
+              </ModalBody>
+            <ModalFooter>
+              <Button color="primary" onClick={toggle}>Save</Button>{' '}
+              <Button color="secondary" onClick={toggle}>Cancel</Button>
+            </ModalFooter>
       </Modal>
     </div>
   );

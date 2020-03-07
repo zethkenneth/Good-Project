@@ -32,6 +32,8 @@ class Login extends React.Component {
     }
 
     render(){
+
+        
         return (
             <section className="container-fluid">
                 <section className="row justify-content-center">
@@ -47,7 +49,9 @@ class Login extends React.Component {
                                     id="exampleInputEmail1"
                                     aria-describedby="emailHelp"
                                     placeholder="Username"
+                                    required
                                 />
+                                
                             </div>
                             <div className="form-group">
                                 <input onChange={this.onPasswordChange} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />

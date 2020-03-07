@@ -44,44 +44,32 @@ server.post('/login',(req,res) => {
     
 });
 
-server.post('/addAccount', (req, res) => {
-    let AccountName;
-    let AccountUsertype;  
-    let AccountUsername;  
-    let AccountPassword;  
+server.post('/admin/settings', (req, res) => {
     let CreatedAt = new Date();
-     AccountName = req.body.Account_Name;
-     AccountUsertype =  req.body.Account_Usertype;
-     AccountUsername =  req.body.Account_Username;
-     AccountPassword =  req.body.Account_Password;
-
-   
     db.run('INSERT INTO Account (AccountName,AccountUsertype,AccountUsername,AccountPassword,CreatedAt) VALUES (?,?,?,?,?)', 
         [
-            AccountName,
-            AccountUsertype,
-            AccountUsername,
-            AccountPassword,
+            req.body.Account_Name,
+            req.body.Account_UserType,
+            req.body.Account_Username,
+            req.body.Account_Password,
             CreatedAt
         ], (err) => {   
                 if (err) {
+                    console.log(err);
                     res.send("Error Inserted table: ", err);
                 } else {
                     res.send("Successfully Added");
                 }
-                
          });
 });
 
 server.post('/addMedicine', (req, res) => {
-    let a = [
-        req.body.Generic_Name,
-        req.body.Brand_Name
-    ];
-
     let query = "INSERT INTO Medicine (GenericName,BrandName) VALUES (?,?)"
     db.serialize(() => {
-        db.run(query,a, (err) =>{
+        db.run(query, [
+            req.body.Generic_Name,
+            req.body.Brand_Name
+        ], (err) =>{
             if (err) {
                 res.send("Error Inserted table: ", err);
             } else {
@@ -91,23 +79,6 @@ server.post('/addMedicine', (req, res) => {
     })
 });
 
-server.post('/addMedicine', (req, res) => {
-    let a = [
-        req.body.Generic_Name,
-        req.body.Brand_Name
-    ];
-
-    let query = "INSERT INTO Medicine (GenericName,BrandName) VALUES (?,?)"
-    db.serialize(() => {
-        db.run(query, a, (err) => {
-            if (err) {
-                res.send("Error Inserted table: ", err);
-            } else {
-                res.send("Successfully ");
-            }
-        })
-    })
-});
 
 
 server.listen(3001, () => {
