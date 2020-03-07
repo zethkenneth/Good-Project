@@ -2,7 +2,8 @@
 import React from "react";
 
 import SettingCards from "../components/SettingCards/SettingCards.jsx"
-
+import { BrowserRouter as Router, Switch , Route } from "react-router-dom";
+import Course from "./Course";
 
 class Setting extends React.Component {
   render() {
@@ -10,7 +11,7 @@ class Setting extends React.Component {
       <>
          <div className="content">
           <SettingCards />
-          
+         
         </div>
       </>
    );

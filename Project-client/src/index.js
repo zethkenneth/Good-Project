@@ -11,7 +11,8 @@ import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 import AdminLayout from "layouts/Admin.jsx";
 import HomepageLayout from "layouts/Homepage.jsx";
-import LoginLayout from "views/Login.jsx"
+import LoginLayout from "views/Login.jsx";
+import Course from "views/Course.jsx";
 
 const hist = createBrowserHistory();
 
@@ -21,6 +22,8 @@ ReactDOM.render(
       <Route path="/homepage" component={HomepageLayout} />
       <Route path="/login" component={LoginLayout} />
       <Route path="/admin" render={props => <AdminLayout {...props} />} />  
+      <Route path="/adminsettingcourse" component={Course} />
+
       <Redirect to="/homepage" />
     </Switch>
   </Router>,

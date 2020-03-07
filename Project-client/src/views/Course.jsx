@@ -35,26 +35,26 @@ class Course extends React.Component {
   render(){
     return (
       <>
-        <div className="content">
+        <div className="content" style={{marginLeft:'300px', marginTop:'150px'}}>
           
          
             
            
               <Row>
-                <Col sm="12">
-                  <Card className="card-user">
+                <Col sm="10" >
+                  <Card className="card-user"  style={{backgroundColor:'ghostwhite'}}>
                     <CardHeader>
-                      <CardTitle tag="h5">Patient Information</CardTitle>
+                      <CardTitle tag="h5">ADD COURSE</CardTitle>
                     </CardHeader>
                     <CardBody>
                       <Form>
                         <Row>
-                          <Col className="pr-1" md="3">
+                          <Col className="pr-1" md="6">
                           <FormGroup>
-                              <label>ID No.</label>
+                              <label>Course Name</label>
                               <Input
                                 
-                                placeholder="Enter ID No."
+                                placeholder="Enter Course Name"
                                 type="text"
                               />
                             </FormGroup>
@@ -63,52 +63,14 @@ class Course extends React.Component {
                          
                         </Row>
                         <Row>
-                        <Col className="pr-1" md="3">
-                            <FormGroup>
-                              <label>Last Name</label>
-                              <Input
-                               
-                                placeholder="Last Name"
-                                type="text"
-                              />
-                            </FormGroup>
-                          </Col>
-                          <Col className="pr-1" md="3">
-                            <FormGroup>
-                              <label>First Name</label>
-                              <Input
-                                placeholder="First Name"
-                                type="text"
-                              />
-                            </FormGroup>
-                          </Col>
+                       
                           
-                          <Col className="pr-1" md="3">
-                            <FormGroup>
-                              <label>Middle Name</label>
-                              <Input
-                               
-                                placeholder="Middle Name"
-                                type="text"
-                              />
-                            </FormGroup>
-                          </Col>
-
-                          <Col className="pr-1" md="2">
-                            <FormGroup>
-                              <label>Extension Name</label>
-                              <Input
-                               
-                                placeholder="Ext Name"
-                                type="text"
-                              />
-                            </FormGroup>
-                          </Col>
+                          
                         </Row>
                         <Row>
-                        <Col className="pr-1" md="3">
+                        <Col className="pr-1" md="6">
                            <FormGroup>
-                             <label>Sex</label>
+                             <label>Department</label>
                               <select className="form-control">
                                
                               <option>Select..</option>
@@ -119,69 +81,27 @@ class Course extends React.Component {
                            </FormGroup>
                          </Col>
 
-                         <Col className="pr-1" md="3">
-                           <FormGroup>
-                             <label>Birth Date</label>
-                             <input type="date" className="form-control" placeholder="month"/>
-                           </FormGroup>
-                         </Col>
+                        
                         </Row>
 
-                        <Row>
-                        <Col className="pr-1" md="3">
-                           <FormGroup>
-                             <label>College</label>
-                              <select className="form-control">
-                               
-                              <option>Select..</option>
-                                <option>ICS</option>
-                                <option>CET</option>
-                                <option>CTE</option>
-                                <option>CN</option>
-                              </select>
-                           </FormGroup>
-                         </Col>
-                        
-                         <Col className="pr-1" md="3">
-                           <FormGroup>
-                             <label>Course</label>
-                              <select className="form-control">
-                               
-                              <option>Select..</option>
-                                <option>Department of Computer Engineering</option>
-                                <option>Department of Computer Education</option>
-                                <option>Department of Civil Engineering</option>
-                                <option>CN</option>
-                              </select>
-                             
-                           </FormGroup>
-                         </Col>
-                         <Col className="pr-1" md="3">
-                           <FormGroup>
-                             <label>Year</label>
-                              <select className="form-control">
-                               
-                              <option>Select..</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                              </select>
-                             
-                           </FormGroup>
-                         </Col>
-                        </Row>
+
                        
                         <Row>
-                          <div className="update ml-auto mr-auto">
+                          <div className="update ml-auto mr-auto" >
                           <Row>
                           <div className="update ml-auto mr-auto">
+                          <Button
+                              className="btn-round"
+                              color="DANGER"
+                              type="submit" >
+                              CANCEL
+                            </Button>
                          
                             <Button
                               className="btn-round"
                               color="primary"
                               type="submit">
-                              Next
+                              SAVE
                             </Button>
                           </div>
                         </Row>
