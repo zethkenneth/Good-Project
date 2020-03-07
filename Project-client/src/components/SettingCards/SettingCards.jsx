@@ -1,6 +1,6 @@
 
 import React from "react";
-
+import Course from "../../views/Course";
 
 import {
     Card,
@@ -10,6 +10,7 @@ import {
     Row,
     Col
 } from "reactstrap";
+import { Link } from 'react-router-dom';
 
 class SettingCards extends React.Component {
     render() {
@@ -96,6 +97,7 @@ class SettingCards extends React.Component {
                         </Card>
                     </Col>
                     <Col lg="3" md="6" sm="6">
+                    <Link to="/admin/setting/course">
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>
@@ -120,6 +122,7 @@ class SettingCards extends React.Component {
                   </div>
                             </CardFooter>
                         </Card>
+                    </Link>
                     </Col>
                     <Col lg="3" md="6" sm="6">
                         <Card className="card-stats">

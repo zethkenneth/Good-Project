@@ -21,8 +21,8 @@ import Dashboard from "views/Dashboard.jsx";
 import PatientRecords from "views/PatientRecords.jsx";
 import Setting from "views/Setting.jsx";
 import Inventory from "views/Inventory.jsx";
-
 import PatientInfo from "views/PatientInfo.jsx";
+
 
 
 
@@ -66,8 +66,7 @@ var routes = [
     icon: "nc-icon nc-settings-gear-65",
     component: Setting,
     layout: "/admin"
-  },
-  
+  }
   
   
 ];
