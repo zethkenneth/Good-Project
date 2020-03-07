@@ -12,6 +12,24 @@ const ModalExample = (props) => {
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
+/**style for header -vnc */
+  const headerstyle={
+    color: "#ffffff",
+    backgroundColor: "#3399ff"
+  }
+/**style for LOAD buttons -vnc */
+  const btnstyle={
+    color:"primary",
+    size:"sm",
+    marginLeft:"10px",
+    backgroundColor: "#0083ce",
+    
+  }
+  /**style for ADD Med Btn -vnc */
+  const btnAdd={
+    marginLeft:"80%",
+    backgroundColor: "#0083ce"
+  }
 
   return (
     <div className="content">
@@ -19,16 +37,17 @@ const ModalExample = (props) => {
             <Col md="12">
               <Card>
                 <CardHeader>
-                  <CardTitle tag="h4">Medicine List</CardTitle>
-                  <input placeholder="Search..." type="text" className="form-control" style={{width:'200px'}}></input>
+                  <CardTitle tag="h4" style={{color:'#0083ce'}}><b>Medicine</b>List</CardTitle>
+                  <button type="submit" class="btn-round btn btn-primary" style={btnAdd}>Add Medicine</button>
+                  <input placeholder="Search..." type="text" class="form-control" style={{width:'200px'}}></input>
                 </CardHeader>
                 <CardBody>
                   <Table responsive>
                     <thead className="text-primary">
-                      <tr>
+                      <tr style={headerstyle}>
                         <th>Brand Name</th>
                         <th>Generic Name</th>
-                        <th>Dosage</th>
+                        <th>Dose</th>
                         <th>Unit</th>
                         <th>Storage Area</th>
                         <th>Expiry Date</th>
@@ -44,7 +63,17 @@ const ModalExample = (props) => {
                         <td>mg</td>
                         <td>Storage B</td>
                         <td>3/20/20</td>
-                       <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
+                       <td>49<button  type="submit"  class="btn-round btn btn-primary" style={btnstyle}  onClick={toggle}>{buttonLabel}Load</button></td>
+                        <td>Remarks</td>
+                      </tr>
+                      <tr>
+                        <td>Biogesic</td>
+                        <td>Paracetamol</td>
+                        <td>50</td>
+                        <td>mg</td>
+                        <td>Storage B</td>
+                        <td>3/20/20</td>
+                       <td>49<button  type="submit"  class="btn-round btn btn-primary" style={btnstyle}  onClick={toggle}>{buttonLabel}Load</button></td>
                         <td>Remarks</td>
                       </tr>
 
@@ -55,7 +84,7 @@ const ModalExample = (props) => {
                         <td>mg</td>
                         <td>Storage B</td>
                         <td>3/20/20</td>
-                       <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
+                       <td>49<button  type="submit"  class="btn-round btn btn-primary" style={btnstyle}  onClick={toggle}>{buttonLabel}Load</button></td>
                         <td>Remarks</td>
                       </tr>
 
@@ -66,18 +95,7 @@ const ModalExample = (props) => {
                         <td>mg</td>
                         <td>Storage B</td>
                         <td>3/20/20</td>
-                       <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
-                        <td>Remarks</td>
-                      </tr>
-
-                      <tr>
-                        <td>Biogesic</td>
-                        <td>Paracetamol</td>
-                        <td>50</td>
-                        <td>mg</td>
-                        <td>Storage B</td>
-                        <td>3/20/20</td>
-                       <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
+                       <td>49<button  type="submit"  class="btn-round btn btn-primary"style={btnstyle}  onClick={toggle}>{buttonLabel}Load</button></td>
                         <td>Remarks</td>
                       </tr>
 
@@ -88,7 +106,7 @@ const ModalExample = (props) => {
                         <td>mg</td>
                         <td>Storage B</td>
                         <td>3/20/20</td>
-                       <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
+                       <td>49<button  type="submit"  class="btn-round btn btn-primary" style={btnstyle}  onClick={toggle}>{buttonLabel}Load</button></td>
                         <td>Remarks</td>
                       </tr>
 
@@ -99,12 +117,13 @@ const ModalExample = (props) => {
                         <td>mg</td>
                         <td>Storage B</td>
                         <td>3/20/20</td>
-                       <td>49<Button color="primary" size="sm" style={{marginLeft:'10px'}}  onClick={toggle}>{buttonLabel}Load</Button></td>
+                       <td>49<button  type="submit"  class="btn-round btn btn-primary" style={btnstyle}  onClick={toggle}>{buttonLabel}Load</button></td>
                         <td>Remarks</td>
                       </tr>
                     </tbody>
                   </Table>
-                  <button type="submit" class="btn-round btn btn-primary" >Add Medicine</button>
+                  
+                  
                   
                 </CardBody>
               </Card>

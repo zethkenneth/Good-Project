@@ -49,57 +49,51 @@ class Sidebar extends React.Component {
       ps.destroy();
     }
   }
-  render() {
+   render() {
     return (
       
       <div
-        className="sidebar"
-        data-color={this.props.bgColor}
-        data-active-color={this.props.activeColor}
-      >
-        <div className="logo">
-          <a
-            href="#Logo"
-            className="simple-text logo-mini"
-          >
-            <div className="logo-img">
-              <img src={logo} alt="react-logo" />
+          className="sidebar"
+          data-color={this.props.bgColor}
+          data-active-color={this.props.activeColor}>
+            
+            <div className="logo">
+                <a href="#Logo" className="simple-text logo-mini">
+                    
+                    <div className="logo-img">
+                        <img src={logo} alt="react-logo" />
+                    </div>
+                </a>
+                
+                <a href="#Wmsu" className="simple-text logo-normal">WMSU Clinic</a>
             </div>
-          </a>
-          <a
-            href="#Wmsu"
-            className="simple-text logo-normal"
-          >
-            WMSU Clinic
-          </a>
-        </div>
-        <div className="sidebar-wrapper" ref={this.sidebar}>
-          <Nav>
-            {this.props.routes.map((prop, key) => {
-              return (
-                <li
-                  className={
-                    this.activeRoute(prop.path) +
-                    (prop.pro ? " active-pro" : "")
-                  }
-                  key={key}
-                >
-                  <NavLink
-                    to={prop.layout + prop.path}
-                    className="nav-link"
-                    activeClassName="active"
-                  >
-                    <i className={prop.icon} />
-                    <p>{prop.name}</p>
-                  </NavLink>
-                </li>
-              );
-            })}
-          </Nav>
-        </div>
+
+            <div className="sidebar-wrapper" ref={this.sidebar}>
+                <Nav>
+                    {this.props.routes.map((prop, key) => {
+                      return (
+                          <li
+                              className={this.activeRoute(prop.path) + (prop.pro ? " active-pro" : "")}
+                              key={key}>
+                            
+                              <NavLink
+                                  to={prop.layout + prop.path}
+                                  className="nav-link"
+                                  activeClassName="active">
+                                  
+                                  <i className={prop.icon} />
+                                  <p>{prop.name}</p>
+                              </NavLink>
+                          </li>
+                        );
+                    }
+                    )}
+                </Nav>
+            </div>
       </div>
     );
-  }
+  };
 }
+
 
 export default Sidebar;
