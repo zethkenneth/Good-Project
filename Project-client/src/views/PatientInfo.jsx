@@ -199,6 +199,7 @@ const PatientInfo = (props) => {
                           <div className="update ml-auto mr-auto">
                           <Row>
                           <div className="update ml-auto mr-auto">
+                         
                             <Button
                               className="btn-round"
                               color="primary"
@@ -347,6 +348,12 @@ const PatientInfo = (props) => {
                           <div className="update ml-auto mr-auto">
                           <Row>
                           <div className="update ml-auto mr-auto">
+                          <Button
+                              className="btn-round"
+                              color="primary"
+                              type="submit">
+                              Back
+                            </Button>
                             <Button
                               className="btn-round"
                               color="primary"
@@ -496,6 +503,12 @@ const PatientInfo = (props) => {
                           <div className="update ml-auto mr-auto">
                           <Row>
                           <div className="update ml-auto mr-auto">
+                          <Button
+                              className="btn-round"
+                              color="primary"
+                              type="submit">
+                              Back
+                            </Button>
                             <Button
                               className="btn-round"
                               color="primary"

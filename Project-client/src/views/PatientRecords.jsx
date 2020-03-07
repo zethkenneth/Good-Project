@@ -64,11 +64,11 @@ class PatientRecords extends React.Component {
                         <td>Male</td>
                         <td>09091232223</td>
                         <td>January 1, 1999</td>
-                        <td>BS Architecture></td>
+                        <td>BSIT</td>
                         <td>1st</td>
-                        <td>A</td>
+                        <td style={{textAlign:'center'}}>A</td>
                         <td>Department of Architecture</td>
-                        <td>Flu</td>
+                        <td style={{textAlign:'center'}}>Flu</td>
                         <td>EDIT</td>
                       </tr>
                       <tr>
@@ -79,11 +79,11 @@ class PatientRecords extends React.Component {
                         <td>Male</td>
                         <td>09091232223</td>
                         <td>January 1, 1999</td>
-                        <td>BS Architecture></td>
+                        <td>BSIT</td>
                         <td>1st</td>
-                        <td>A</td>
+                        <td style={{textAlign:'center'}}>A</td>
                         <td>Department of Architecture</td>
-                        <td>Flu</td>
+                        <td style={{textAlign:'center'}}>Flu</td>
                         <td>EDIT</td>
                       </tr>
                       <tr>
@@ -94,11 +94,11 @@ class PatientRecords extends React.Component {
                         <td>Male</td>
                         <td>09091232223</td>
                         <td>January 1, 1999</td>
-                        <td>BS Architecture></td>
+                        <td>BSIT</td>
                         <td>1st</td>
-                        <td>A</td>
+                        <td style={{textAlign:'center'}}>A</td>
                         <td>Department of Architecture</td>
-                        <td>Flu</td>
+                        <td style={{textAlign:'center'}}>Flu</td>
                         <td>EDIT</td>
                       </tr>
                       <tr>
@@ -109,11 +109,11 @@ class PatientRecords extends React.Component {
                         <td>Male</td>
                         <td>09091232223</td>
                         <td>January 1, 1999</td>
-                        <td>BS Architecture></td>
+                        <td>BSIT</td>
                         <td>1st</td>
-                        <td>A</td>
+                        <td style={{textAlign:'center'}}>A</td>
                         <td>Department of Architecture</td>
-                        <td>Flu</td>
+                        <td style={{textAlign:'center'}}>Flu</td>
                         <td>EDIT</td>
                       </tr>
                       <tr>
@@ -124,11 +124,11 @@ class PatientRecords extends React.Component {
                         <td>Male</td>
                         <td>09091232223</td>
                         <td>January 1, 1999</td>
-                        <td>BS Architecture></td>
+                        <td>BSIT</td>
                         <td>1st</td>
-                        <td>A</td>
+                        <td style={{textAlign:'center'}}>A</td>
                         <td>Department of Architecture</td>
-                        <td>Flu</td>
+                        <td style={{textAlign:'center'}}>Flu</td>
                         <td>EDIT</td>
                       </tr>
                       <tr>
@@ -139,11 +139,11 @@ class PatientRecords extends React.Component {
                         <td>Male</td>
                         <td>09091232223</td>
                         <td>January 1, 1999</td>
-                        <td>BS Architecture></td>
+                        <td>BSIT</td>
                         <td>1st</td>
-                        <td>A</td>
+                        <td style={{textAlign:'center'}}>A</td>
                         <td>Department of Architecture</td>
-                        <td>Flu</td>
+                        <td style={{textAlign:'center'}}>Flu</td>
                         <td>EDIT</td>
                       </tr>
                       <tr>
@@ -154,13 +154,14 @@ class PatientRecords extends React.Component {
                         <td>Male</td>
                         <td>09091232223</td>
                         <td>January 1, 1999</td>
-                        <td>BS Architecture></td>
+                        <td>BSIT</td>
                         <td>1st</td>
-                        <td>A</td>
+                        <td style={{textAlign:'center'}}>A</td>
                         <td>Department of Architecture</td>
-                        <td>Flu</td>
+                        <td style={{textAlign:'center'}}>Flu</td>
                         <td>EDIT</td>
                       </tr>
+                      
                     </tbody>
                   </Table>
                 </CardBody>

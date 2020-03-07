@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classnames from 'classnames';
-import AccTable from "./AccTable";
+
 
 // reactstrap components
 import {

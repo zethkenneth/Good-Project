@@ -114,6 +114,7 @@ const ModalExample = (props) => {
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Load Medicine</ModalHeader>
         <ModalBody>
+
          Load form dzai
         </ModalBody>
         <ModalFooter>
