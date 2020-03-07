@@ -1,24 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import wmsu from 'assets/img/wmsu.png';
+
 import { Form, FormGroup, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class LoginModal extends Component {
 
   constructor(props) {
     super(props)
-
     this.state = {
       modal: false,
       signInUsername: '',
       signInPassword: ''
     }
-  }
-
-  toggle = () => {
-    this.setState({
-      modal: !this.state.modal
-    })
   }
 
   onUsernameChange = event => {
@@ -31,6 +24,17 @@ class LoginModal extends Component {
     this.setState({
       signInPassword: event.target.value
     })
+  }
+
+  onSubmitSignIn = () => {
+    fetch('http://localhost:3001/logint', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        Account_Username: this.state.signInUsername,
+        Account_Password: this.state.signInPassword
+      })
+    });
   }
 
   // const [modal, setModal] = useState(false);
@@ -68,7 +72,7 @@ class LoginModal extends Component {
 
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.props.toggle}>Login</Button>
+            <Button color="primary" onClick={this.onSubmitSignIn}>Login</Button>
             <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
