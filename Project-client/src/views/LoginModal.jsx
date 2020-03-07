@@ -72,7 +72,7 @@ class LoginModal extends Component {
 
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.onSubmitSignIn}>Login</Button>
+            <Link to="/admin/dashboard"> <Button color="primary" onClick={this.onSubmitSignIn}>Login</Button></Link>
             <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
