@@ -131,14 +131,14 @@ const ModalExample = (props) => {
           </Row> 
       
       <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Load Medicine</ModalHeader>
-        <ModalBody>
-         Load form dzai
-        </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={toggle}>Save</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
-        </ModalFooter>
+            <ModalHeader toggle={toggle}>Load Medicine</ModalHeader>
+              <ModalBody>
+              Load form dzai
+              </ModalBody>
+            <ModalFooter>
+              <Button color="primary" onClick={toggle}>Save</Button>{' '}
+              <Button color="secondary" onClick={toggle}>Cancel</Button>
+            </ModalFooter>
       </Modal>
     </div>
   );

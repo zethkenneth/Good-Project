@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import classnames from 'classnames';
 
 
@@ -22,45 +22,51 @@ import {
   Col
 } from "reactstrap";
 
-const PatientInfo = (props) => {
-
-
-  const [activeTab, setActiveTab] = useState('1');
-
-  const toggle = tab => {
-    if(activeTab !== tab) setActiveTab(tab);
+class PatientInfo extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      activeTab: '1'
+    }
   }
 
+
+  toggle = tab => {
+    if(this.state.activeTab !== tab) {
+      this.setState({ activeTab: tab});
+    }
+  }
+  render(){
     return (
       <>
         <div className="content">
           <Nav tabs>
             <NavItem>
               <NavLink
-                className={classnames({ active: activeTab === '1' })}
-                onClick={() => { toggle('1'); }}
+                className={classnames({ active: this.state.activeTab === '1' })}
+                onClick={() => { this.toggle('1'); }}
               >
                 Patient Form
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                className={classnames({ active: activeTab === '2' })}
-                onClick={() => { toggle('2'); }}
+                className={classnames({ active: this.state.activeTab === '2' })}
+                onClick={() => { this.toggle('2'); }}
               >Adviser Form
               </NavLink>
             </NavItem>
 
             <NavItem>
               <NavLink
-                className={classnames({ active: activeTab === '3' })}
-                onClick={() => { toggle('3'); }}
+                className={classnames({ active: this.state.activeTab === '3' })}
+                onClick={() => { this.toggle('3'); }}
               >Diagnosis
               </NavLink>
             </NavItem>
 
           </Nav>
-          <TabContent activeTab={activeTab}>
+          <TabContent activeTab={this.state.activeTab}>
             
             <TabPane tabId="1">
               <Row>
@@ -199,6 +205,7 @@ const PatientInfo = (props) => {
                           <div className="update ml-auto mr-auto">
                           <Row>
                           <div className="update ml-auto mr-auto">
+                         
                             <Button
                               className="btn-round"
                               color="primary"
@@ -347,6 +354,12 @@ const PatientInfo = (props) => {
                           <div className="update ml-auto mr-auto">
                           <Row>
                           <div className="update ml-auto mr-auto">
+                          <Button
+                              className="btn-round"
+                              color="primary"
+                              type="submit">
+                              Back
+                            </Button>
                             <Button
                               className="btn-round"
                               color="primary"
@@ -496,6 +509,12 @@ const PatientInfo = (props) => {
                           <div className="update ml-auto mr-auto">
                           <Row>
                           <div className="update ml-auto mr-auto">
+                          <Button
+                              className="btn-round"
+                              color="primary"
+                              type="submit">
+                              Back
+                            </Button>
                             <Button
                               className="btn-round"
                               color="primary"
@@ -518,5 +537,7 @@ const PatientInfo = (props) => {
       
     </>
     );
-  }
+  };
+}
+
 export default PatientInfo;
