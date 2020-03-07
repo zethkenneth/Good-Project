@@ -43,7 +43,7 @@ class HomepageNavbar extends React.Component {
                         <li className="nav-item">
                             {/*<Link to="/login" type="button" className="btn btn-outline-primary">Log In </Link>*/}
                             <Button onClick={this.displayModal}>Login</Button>
-                            <LoginModal opened={this.state.showModal} tog={this.displayModal} />
+                            <LoginModal opened={this.state.showModal} toggle={this.displayModal} />
                         </li>
                     </ul>
                 </div>

@@ -1,28 +1,82 @@
-import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import wmsu from 'assets/img/wmsu.png';
+import { Form, FormGroup, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const LoginModal = (props) => {
+class LoginModal extends Component {
 
-  const [modal, setModal] = useState(false);
+  constructor(props) {
+    super(props)
 
-  const toggle = () => setModal(!modal);
+    this.state = {
+      modal: false,
+      signInUsername: '',
+      signInPassword: ''
+    }
+  }
 
-  console.log(props.opened);
+  toggle = () => {
+    this.setState({
+      modal: !this.state.modal
+    })
+  }
 
-  return (
-    <div>
-      <Modal isOpen={props.opened} toggle={props.tog} >
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-        <ModalBody>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-          <Button color="secondary" onClick={props.tog}>Cancel</Button>
-        </ModalFooter>
-      </Modal>
-    </div>
-  );
+  onUsernameChange = event => {
+    this.setState({
+      signInUsername: event.target.value
+    })
+  }
+
+  onPasswordChange = event => {
+    this.setState({
+      signInPassword: event.target.value
+    })
+  }
+
+  // const [modal, setModal] = useState(false);
+
+  // const toggle = () => setModal(!modal);
+
+  // console.log(props.opened);
+  render() {
+    const { signInUsername, signInPassword } = this.state
+    return (
+      <div>
+        <Form>
+        <Modal isOpen={this.props.opened} toggle={this.props.toggle} >
+          <ModalHeader toggle={this.props.toggle}>Welcome</ModalHeader>
+          <ModalBody>
+            <FormGroup>
+              <Input 
+                value={signInUsername}
+                type="text"
+                className="form-control"
+                onChange={this.onUsernameChange}
+                placeholder="Username"
+              />
+            </FormGroup>
+
+            <FormGroup>
+              <Input 
+                value={signInPassword}
+                type="password"
+                className="form-control"
+                onChange={this.onPasswordChange}
+                placeholder="Password"
+              />
+            </FormGroup>
+
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={this.props.toggle}>Login</Button>
+            <Button color="secondary" onClick={this.props.toggle}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
+        </Form>
+      </div>
+    );
+
+  }
 }
 
 export default LoginModal;
