@@ -1,14 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
+
 import wmsu from 'assets/img/wmsu.png';
+
+
+import LoginModal from '../../views/LoginModal';
 
 class HomepageNavbar extends React.Component {
     constructor(){
         super();
         this.state ={
-
+            showModal: false
         }
+
+        // this.displayModal = this.displayModal.bind(this);
     }
+
+    displayModal = () => {
+        this.setState({
+            showModal: !this.state.showModal
+        })
+    }
+
     render(){
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -27,7 +41,9 @@ class HomepageNavbar extends React.Component {
                             <div className="nav-link" >About Us</div>
                         </li>
                         <li className="nav-item">
-                            <Link to="/login" type="button" className="btn btn-outline-primary">Log In </Link>
+                            {/*<Link to="/login" type="button" className="btn btn-outline-primary">Log In </Link>*/}
+                            <Button onClick={this.displayModal}>Login</Button>
+                            <LoginModal opened={this.state.showModal} toggle={this.displayModal} />
                         </li>
                     </ul>
                 </div>
