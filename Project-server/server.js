@@ -18,7 +18,7 @@ server.get('/', (req, res) =>{
 
 
 
-server.post('/login',(req,res) => {
+server.post('/logint',(req,res) => {
     db.all('Select * from Account where AccountUsername = ? and AccountPassword = ?',
         [
             req.body.Account_Username,
