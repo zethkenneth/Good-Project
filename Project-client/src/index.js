@@ -13,6 +13,7 @@ import AdminLayout from "layouts/Admin.jsx";
 import HomepageLayout from "layouts/Homepage.jsx";
 import LoginLayout from "views/Login.jsx";
 import Course from "views/Course.jsx";
+import courseTable from "views/courseTable.jsx";
 
 const hist = createBrowserHistory();
 
@@ -23,7 +24,7 @@ ReactDOM.render(
       <Route path="/login" component={LoginLayout} />
       <Route path="/admin" render={props => <AdminLayout {...props} />} />  
       <Route path="/adminsettingcourse" component={Course} />
-
+      <Route path="/adminsettingcourseTable" component={courseTable}/>
       <Redirect to="/homepage" />
     </Switch>
   </Router>,

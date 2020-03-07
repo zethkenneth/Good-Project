@@ -1,6 +1,7 @@
 
 import React from "react";
 import Course from "../../views/Course";
+import courseTable from "../../views/courseTable";
 
 import {
     Card,
@@ -97,7 +98,7 @@ class SettingCards extends React.Component {
                         </Card>
                     </Col>
                     <Col lg="3" md="6" sm="6">
-                    <Link to="/adminsettingcourse">
+                    <Link to="/adminsettingcourseTable">
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>
