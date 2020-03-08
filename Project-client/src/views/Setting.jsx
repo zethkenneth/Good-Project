@@ -5,6 +5,8 @@ import SettingCards from "../components/SettingCards/SettingCards.jsx"
 import { BrowserRouter as Router, Switch , Route } from "react-router-dom";
 import Course from "./Course";
 import courseTable from "./courseTable";
+import studentTable from "./studentTable";
+import employeeTable from "./employeeTable";
 
 class Setting extends React.Component {
   render() {

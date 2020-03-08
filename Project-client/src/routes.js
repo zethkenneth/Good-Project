@@ -4,7 +4,7 @@
 * Paper Dashboard React - v1.1.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
+* Product Page: https://www.creative-tim.com/dumbell/product/paper-dashboard-react
 * Copyright 2019 Creative Tim (https://www.creative-tim.com)
 
 * Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/master/LICENSE.md)
@@ -67,7 +67,7 @@ var routes = [
     component: Setting,
     layout: "/admin"
   }
-  
+
   
 ];
 export default routes;

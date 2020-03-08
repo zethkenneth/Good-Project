@@ -27,7 +27,7 @@ const btnAdd={
     marginLeft:"80%",
     backgroundColor: "#0083ce"
   }
-class courseTable extends React.Component {
+class employeeTable extends React.Component {
   render() {
     return (
       <>
@@ -36,7 +36,7 @@ class courseTable extends React.Component {
             <Col md="12">
               <Card>
                 <CardHeader>
-                  <CardTitle tag="h4">ADD COURSE</CardTitle>
+                  <CardTitle tag="h4">ADD STUDENT</CardTitle>
                   <input placeholder="Search..." type="text" class="form-control" style={{width:'200px'}}></input>
                 </CardHeader>
                 
@@ -111,4 +111,4 @@ class courseTable extends React.Component {
   }
 }
 
-export default courseTable;
+export default employeeTable;
