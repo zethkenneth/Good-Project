@@ -57,9 +57,6 @@ var routes = [
     component: Inventory,
     layout: "/admin"
   },
-  
-  
-  
   {
     path: "/settings",
     name: "Setting",
