@@ -2,12 +2,13 @@
 import React from "react";
 import Course from "../../views/Course";
 import courseTable from "../../views/courseTable";
-
+import studentTable from "../../views/studentTable";
+import employeeTable from "../../views/employeeTable";
 import {
     Card,
     CardBody,
     CardFooter,
-    CardTitle,
+    CardTitle, 
     Row,
     Col
 } from "reactstrap";
@@ -126,6 +127,7 @@ class SettingCards extends React.Component {
                     </Link>
                     </Col>
                     <Col lg="3" md="6" sm="6">
+                   
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>
@@ -153,6 +155,7 @@ class SettingCards extends React.Component {
                     </Col>
                     
                     <Col lg="3" md="6" sm="6">
+                    <Link to="/adminsettingstudentTable">
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>
@@ -177,8 +180,10 @@ class SettingCards extends React.Component {
                   </div>
                             </CardFooter>
                         </Card>
+                        </Link>
                     </Col>
                     <Col lg="3" md="6" sm="6">
+                    <Link to="/adminsettingemployeeTable">
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>
@@ -203,6 +208,7 @@ class SettingCards extends React.Component {
                   </div>
                             </CardFooter>
                         </Card>
+                        </Link>
                     </Col>
                     <Col lg="3" md="6" sm="6">
                         <Card className="card-stats">
