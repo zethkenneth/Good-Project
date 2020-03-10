@@ -39,7 +39,7 @@ class Dashboard extends React.Component {
     return (
       <>
         <div className="content">
-        <Row>
+    {  /* <Row>
             <Col lg="3" md="6" sm="6">
               <Card className="card-stats">
                 <CardBody>
@@ -145,7 +145,7 @@ class Dashboard extends React.Component {
               </Card>
             </Col>
             
-          </Row>
+          </Row>here */}
          
           <Row>
             <Col md="12">
