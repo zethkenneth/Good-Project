@@ -79,6 +79,37 @@ server.post('/addMedicine', (req, res) => {
     })
 });
 
+server.post('/addDepartment', (req,res) => {
+    let query = "INSERT INTO Department (DepartmentName) VALUES (?)"
+    db.serialize(() => {
+        db.run(query, [
+            req.body.Department_Name
+        ], (err) => {
+            if (err) {
+                res.send("Error Inserted table: ", err);
+            } else {
+                res.send("Successfully ");
+            }
+        })
+    })
+});
+
+server.post('/addCourse', (req, res) => {
+    let query = "INSERT INTO Course (CourseName,DepartmentID) VALUES (?,?)"
+    db.serialize(() => {
+        db.run(query, [
+            req.body.Course_Name,
+            req.body.Department_Name
+        ], (err) => {
+            if (err) {
+                res.send("Error Inserted table: ", err);
+            } else {
+                res.send("Successfully ");
+            }
+        })
+    })
+});
+
 
 
 server.listen(3001, () => {

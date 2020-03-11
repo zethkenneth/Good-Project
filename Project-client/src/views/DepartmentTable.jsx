@@ -27,7 +27,7 @@ const btnAdd={
     marginLeft:"80%",
     backgroundColor: "#0083ce"
   }
-class studentTable extends React.Component {
+class DepartmentTable extends React.Component {
   render() {
     return (
       <>
@@ -36,12 +36,12 @@ class studentTable extends React.Component {
             <Col md="12">
               <Card>
                 <CardHeader>
-                  <CardTitle tag="h4">ADD STUDENT</CardTitle>
+                  <CardTitle tag="h4">ADD Department</CardTitle>
                   <input placeholder="Search..." type="text" class="form-control" style={{width:'200px'}}></input>
                 </CardHeader>
                 
-                <Link to="/adminsettingcourse">
-                <button type="submit" class="btn-round btn btn-primary" style={btnAdd}>Add Course</button>
+              <Link to="/adminsettingdepartment">
+                <button type="submit" class="btn-round btn btn-primary" style={btnAdd}>Add Department</button>
                 </Link>
                 
                 <CardBody style={{width:'1500px'}}>
@@ -111,4 +111,4 @@ class studentTable extends React.Component {
   }
 }
 
-export default studentTable;
+export default DepartmentTable;
