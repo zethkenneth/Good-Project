@@ -36,21 +36,21 @@ class studentTable extends React.Component {
             <Col md="12">
               <Card>
                 <CardHeader>
-                  <CardTitle tag="h4">ADD STUDENT</CardTitle>
+                  <CardTitle tag="h4">STUDENT LIST</CardTitle>
                   <input placeholder="Search..." type="text" class="form-control" style={{width:'200px'}}></input>
                 </CardHeader>
                 
-                <Link to="/adminsettingcourse">
-                <button type="submit" class="btn-round btn btn-primary" style={btnAdd}>Add Course</button>
+                <Link to="/adminsettingaddstudent">
+                <button type="submit" class="btn-round btn btn-primary" style={btnAdd}>Add Student</button>
                 </Link>
                 
                 <CardBody style={{width:'1500px'}}>
                   <Table responsive>
                     <thead className="text-primary" >
                       <tr>
-                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Course Name</th>
-                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Department Name</th>
-                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Action</th>
+                        <th style={{color:'white', backgroundColor:' #3399FF'}}>Course Name</th>
+                        <th style={{color:'white', backgroundColor:' #3399FF'}}>Department Name</th>
+                        <th style={{color:'white', backgroundColor:' #3399FF'}}>Action</th>
                        
                       </tr>
                     </thead>

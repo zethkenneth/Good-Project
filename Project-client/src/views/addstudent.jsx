@@ -1,11 +1,15 @@
 import React from "react";
-
+import classnames from 'classnames';
 
 
 
 // reactstrap components
 import {
-
+  TabContent, 
+  TabPane, 
+  Nav, 
+  NavItem, 
+  NavLink, 
   Button,
   Card,
   CardHeader,
@@ -26,28 +30,10 @@ class Course extends React.Component {
   constructor(){
     super();
     this.state = {
-      CourseName: '',
-      DepartmentName: ''
+      
     }
   }
 
-  onCourseNameChange = (event) => {
-    this.setState({ CourseName: event.target.value });
-  }
-  onDepartmentNameChange = (event) => {
-    this.setState({ DepartmentName: event.target.value });
-  }
-
-  onAddCourse = () => {
-    fetch('http://localhost:3001/addCourse', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        Course_Name: this.state.CourseName,
-        Department_Name: this.state.DepartmentName
-      })
-    });
-  }
 
   
   render(){
@@ -62,17 +48,17 @@ class Course extends React.Component {
                 <Col sm="10" >
                   <Card className="card-user"  style={{backgroundColor:'ghostwhite'}}>
                     <CardHeader>
-                      <CardTitle tag="h5">ADD COURSE</CardTitle>
+                      <CardTitle tag="h5">ADD STUDENT</CardTitle>
                     </CardHeader>
                     <CardBody>
                       <Form>
                         <Row>
                           <Col className="pr-1" md="6">
                           <FormGroup>
-                              <label>Course Name</label>
+                              <label>Student Name</label>
                               <Input
-                                onChange={this.onCourseNameChange}
-                                placeholder="Enter Course Name"
+                                
+                                placeholder="Enter Student Name"
                                 type="text"
                               />
                             </FormGroup>
@@ -87,12 +73,13 @@ class Course extends React.Component {
                         </Row>
                         <Row>
                         <Col className="pr-1" md="6">
-                           <FormGroup onChange={this.onDepartmentNameChange}>
+                           <FormGroup>
                              <label>Department</label>
                               <select className="form-control">
+                               
                               <option>Select..</option>
-                                <option>ICS</option>
-                          
+                                <option>Male</option>
+                                <option>Female</option>
                               </select>
                              
                            </FormGroup>
@@ -115,7 +102,6 @@ class Course extends React.Component {
                             </Button>
                          
                             <Button
-                              onClick={this.onAddCourse}
                               className="btn-round"
                               color="primary"
                               type="submit"

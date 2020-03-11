@@ -48,9 +48,9 @@ class courseTable extends React.Component {
                   <Table responsive>
                     <thead className="text-primary" >
                       <tr>
-                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Course Name</th>
-                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Department Name</th>
-                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Action</th>
+                        <th style={{color:'white', backgroundColor:' #3399FF'}}>Course Name</th>
+                        <th style={{color:'white', backgroundColor:' #3399FF'}}>Department Name</th>
+                        <th style={{color:'white', backgroundColor:' #3399FF'}}>Action</th>
                        
                       </tr>
                     </thead>
