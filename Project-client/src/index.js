@@ -16,6 +16,8 @@ import Course from "views/Course.jsx";
 import courseTable from "views/courseTable.jsx";
 import studentTable from "views/studentTable.jsx";
 import employeeTable from "views/employeeTable";
+import addstudent from "views/addstudent";
+import addemployee from "views/addemployee";
 
 const hist = createBrowserHistory();
 
@@ -26,6 +28,8 @@ ReactDOM.render(
       <Route path="/login" component={LoginLayout} />
       <Route path="/admin" render={props => <AdminLayout {...props} />} />  
       <Route path="/adminsettingcourse" component={Course} />
+      <Route path="/adminsettingaddstudent" component={addstudent}/>
+      <Route path="/adminsettingaddemployee" component={addemployee}/>
       <Route path="/adminsettingcourseTable" component={courseTable}/>
       <Route path="/adminsettingstudentTable" component={studentTable}/>
       <Route path="/adminsettingemployeeTable" component={employeeTable}/>

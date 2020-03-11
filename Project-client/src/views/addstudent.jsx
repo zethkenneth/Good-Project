@@ -48,17 +48,17 @@ class Course extends React.Component {
                 <Col sm="10" >
                   <Card className="card-user"  style={{backgroundColor:'ghostwhite'}}>
                     <CardHeader>
-                      <CardTitle tag="h5">ADD COURSE</CardTitle>
+                      <CardTitle tag="h5">ADD STUDENT</CardTitle>
                     </CardHeader>
                     <CardBody>
                       <Form>
                         <Row>
                           <Col className="pr-1" md="6">
                           <FormGroup>
-                              <label>Course Name</label>
+                              <label>Student Name</label>
                               <Input
                                 
-                                placeholder="Enter Course Name"
+                                placeholder="Enter Student Name"
                                 type="text"
                               />
                             </FormGroup>
