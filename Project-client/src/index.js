@@ -15,17 +15,14 @@ import LoginLayout from "views/Login.jsx";
 import Course from "views/Course.jsx";
 import courseTable from "views/courseTable.jsx";
 import studentTable from "views/studentTable.jsx";
-<<<<<<< HEAD
+
 import Department from "views/Department.jsx";
 import DepartmentTable from "views/DepartmentTable.jsx";
 import Account from "views/Account.jsx";
 import AccountTable from "views/AccountTable.jsx";
 import employeeTable from "views/employeeTable.jsx";
-=======
-import employeeTable from "views/employeeTable";
 import addstudent from "views/addstudent";
 import addemployee from "views/addemployee";
->>>>>>> 4eaeb9a76bf61be20a12a6cb087f5f4aa9c3dff3
 
 const hist = createBrowserHistory();
 
