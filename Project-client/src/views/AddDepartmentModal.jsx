@@ -1,31 +1,30 @@
-import React from "react";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-
-
-
-// reactstrap components
-import {
-
-  Button,
+import { 
+  Row,
+  Col,
   Card,
   CardHeader,
-  CardBody,
   CardTitle,
-  FormGroup,
-  Form,
-  Input,
-  Row,
-  Col
-} from "reactstrap";
+  CardBody,
+  Form, 
+  FormGroup, 
+  Input, 
+  Button, 
+  Modal, 
+  ModalHeader, 
+  ModalBody, 
+  ModalFooter } from 'reactstrap';
 
-class Department extends React.Component {
-  constructor(){
-    super();
+class AddDepartmentModal extends Component {
+
+  constructor(props) {
+    super(props)
     this.state = {
       DepartmentName: ''
     }
   }
-
 
   onDepartmentNameChange = (event) => {
     this.setState({ DepartmentName: event.target.value });
@@ -40,14 +39,16 @@ class Department extends React.Component {
       })
     }); 
   }
-  render(){
+
+  render() {
+    // const { signInUsername, signInPassword } = this.state
     return (
       <React.Fragment>
         <div className="content" style={{marginLeft:'300px', marginTop:'150px'}}>
           
          
             
-           
+           <Modal isOpen={this.props.opened} toggle={this.props.toggle} >
               <Row>
                 <Col sm="10" >
                   <Card className="card-user"  style={{backgroundColor:'ghostwhite'}}>
@@ -86,7 +87,8 @@ class Department extends React.Component {
                           <Button
                               className="btn-round"
                               color="DANGER"
-                              type="submit" >
+                              type="submit" 
+                              onClick={this.props.toggle}>
                               CANCEL
                             </Button>
                          
@@ -107,13 +109,14 @@ class Department extends React.Component {
                 </Col>
               </Row>
             
-            
+            </Modal>
          
       </div>
       
     </React.Fragment>
     );
-  };
+
+  }
 }
 
-export default Department;
+export default AddDepartmentModal;
