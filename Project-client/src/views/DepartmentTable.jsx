@@ -1,24 +1,6 @@
-/*!
-
-=========================================================
-* Paper Dashboard React - vBS CS.BS CS.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
+import AddDepartmentModal from './AddDepartmentModal';
 
-// reactstrap components
 import { Card, CardHeader, CardBody, CardTitle, Row, Col, Table } from "reactstrap";
 
 import { Link } from 'react-router-dom';
@@ -28,9 +10,24 @@ const btnAdd={
     backgroundColor: "#0083ce"
   }
 class DepartmentTable extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      showModal: false
+    }
+  }
+
+  toggleModal = () => {
+    this.setState({
+        showModal: !this.state.showModal
+    })
+  }
+
   render() {
     return (
-      <>
+      <React.Fragment>
         <div className="content">
           <Row>
             <Col md="12">
@@ -40,9 +37,10 @@ class DepartmentTable extends React.Component {
                   <input placeholder="Search..." type="text" class="form-control" style={{width:'200px'}}></input>
                 </CardHeader>
                 
-              <Link to="/adminsettingdepartment">
-                <button type="submit" class="btn-round btn btn-primary" style={btnAdd}>Add Department</button>
-                </Link>
+              
+                <button onClick={this.toggleModal} class="btn-round btn btn-primary" style={btnAdd}>Add Department</button>
+                <AddDepartmentModal opened={this.state.showModal} toggle={this.toggleModal} />
+                
                 
                 <CardBody style={{width:'1500px'}}>
                   <Table responsive>
@@ -106,7 +104,7 @@ class DepartmentTable extends React.Component {
             
           </Row>
         </div>
-      </>
+      </React.Fragment>
     );
   }
 }

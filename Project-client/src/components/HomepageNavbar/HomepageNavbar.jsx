@@ -14,10 +14,9 @@ class HomepageNavbar extends React.Component {
             showModal: false
         }
 
-        // this.displayModal = this.displayModal.bind(this);
     }
 
-    displayModal = () => {
+    toggleModal = () => {
         this.setState({
             showModal: !this.state.showModal
         })
@@ -42,8 +41,8 @@ class HomepageNavbar extends React.Component {
                         </li>
                         <li className="nav-item">
                             {/*<Link to="/login" type="button" className="btn btn-outline-primary">Log In </Link>*/}
-                            <Button onClick={this.displayModal}>Login</Button>
-                            <LoginModal opened={this.state.showModal} toggle={this.displayModal} />
+                            <Button onClick={this.toggleModal}>Login</Button>
+                            <LoginModal opened={this.state.showModal} toggle={this.toggleModal} />
                         </li>
                     </ul>
                 </div>
