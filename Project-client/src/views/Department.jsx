@@ -1,119 +1,111 @@
-import React from "react";
+import React, { Component } from "react";
+import AddDepartmentModal from './AddDepartmentModal';
 
+import { Card, CardHeader, CardBody, CardTitle, Row, Col, Table } from "reactstrap";
 
+import { Link } from 'react-router-dom';
 
+const btnAdd={
+    marginLeft:"80%",
+    backgroundColor: "#0083ce"
+  }
+class DepartmentTable extends Component {
 
-// reactstrap components
-import {
+  constructor(props) {
+    super(props)
 
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
-  FormGroup,
-  Form,
-  Input,
-  Row,
-  Col
-} from "reactstrap";
-
-class Department extends React.Component {
-  constructor(){
-    super();
     this.state = {
-      DepartmentName: ''
+      showModal: false
     }
   }
 
-
-  onDepartmentNameChange = (event) => {
-    this.setState({ DepartmentName: event.target.value });
+  toggleModal = () => {
+    this.setState({
+        showModal: !this.state.showModal
+    })
   }
 
-  onAddDepartment = () => {
-    fetch('http://localhost:3001/addDepartment', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        Department_Name: this.state.DepartmentName,
-      })
-    }); 
-  }
-  render(){
+  render() {
     return (
       <React.Fragment>
-        <div className="content" style={{marginLeft:'300px', marginTop:'150px'}}>
-          
-         
-            
-           
-              <Row>
-                <Col sm="10" >
-                  <Card className="card-user"  style={{backgroundColor:'ghostwhite'}}>
-                    <CardHeader>
-                      <CardTitle tag="h5">ADD Department</CardTitle>
-                    </CardHeader>
-                    <CardBody>
-                      <Form>
-                        <Row>
-                          <Col className="pr-1" md="6">
-                          <FormGroup>
-                              <label>Department Name</label>
-                              <Input
-                                onChange={this.onDepartmentNameChange}
-                                placeholder="Enter Course Name"
-                                type="text"
-                              />
-                            </FormGroup>
-                          </Col>
-                         
-                         
-                        </Row>
-                        <Row>
+        <div className="content">
+          <Row>
+            <Col md="12">
+              <Card>
+                <CardHeader>
+                  <CardTitle tag="h4">ADD Department</CardTitle>
+                  <input placeholder="Search..." type="text" class="form-control" style={{width:'200px'}}></input>
+                </CardHeader>
+                
+                <button onClick={this.toggleModal} class="btn-round btn btn-primary" style={btnAdd}>Add Department</button>
+                <AddDepartmentModal opened={this.state.showModal} toggle={this.toggleModal} />
+                
+                
+                <CardBody style={{width:'1500px'}}>
+                  <Table responsive>
+                    <thead className="text-primary" >
+                      <tr>
+                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Course Name</th>
+                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Department Name</th>
+                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Action</th>
                        
-                          
-                          
-                        </Row>
-  
-
-
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>BS CS</td>
+                        <td>ICS Department</td>
                        
-                        <Row>
-                          <div className="update ml-auto mr-auto" >
-                          <Row>
-                          <div className="update ml-auto mr-auto">
-                          <Button
-                              className="btn-round"
-                              color="DANGER"
-                              type="submit" >
-                              CANCEL
-                            </Button>
-                         
-                            <Button
-                            onClick={this.onAddDepartment}
-                              className="btn-round"
-                              color="primary"
-                              type="submit">
-                              SAVE
-                            </Button>
-                          </div>
-                        </Row>
-                          </div>
-                        </Row>
-                      </Form>
-                    </CardBody>
-                  </Card>
-                </Col>
-              </Row>
+                        <td>EDIT</td>
+                      </tr>
+                      <tr>
+                      <td>BS CS</td>
+                        <td>ICS Department</td>
+                       
+                        <td>EDIT</td>
+                      </tr>
+                      <tr>
+                      <td>BS CS</td>
+                        <td>ICS Department</td>
+                       
+                        <td>EDIT</td>
+                      </tr>
+                      <tr>
+                      <td>BS CS</td>
+                        <td>ICS Department</td>
+                       
+                        <td>EDIT</td>
+                      </tr>
+                      <tr>
+                      <td>BS CS</td>
+                        <td>ICS Department</td>
+                       
+                        <td>EDIT</td>
+                      </tr>
+                      <tr>
+                      <td>BS CS</td>
+                        <td>ICS Department</td>
+                       
+                        <td>EDIT</td>
+                      </tr>
+                      <tr>
+                      <td>BS CS</td>
+                        <td>ICS Department</td>
+                       
+                        <td>EDIT</td>
+                      </tr>
+                      
+                    </tbody>
+                  </Table>
+                </CardBody>
+              </Card>
+            </Col>
             
-            
-         
-      </div>
-      
-    </React.Fragment>
+          </Row>
+        </div>
+      </React.Fragment>
     );
-  };
+  }
 }
 
-export default Department;
+export default DepartmentTable;
