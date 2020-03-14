@@ -1,145 +1,183 @@
-import React from "react";
+import React, { Component } from "react";
+import AddCourseModal from './AddCourseModal';
+
+import { Card, CardHeader, CardBody, CardTitle, CardText, Button, CardFooter, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 
+class Course extends Component {
 
+  constructor(props) {
+    super(props)
 
-// reactstrap components
-import {
-
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
-  FormGroup,
-  Form,
-  Input,
-  Row,
-  Col
-} from "reactstrap";
-const btnAdd={
- 
-  backgroundColor: "#0083ce"
-}
-
-class Course extends React.Component {
-  constructor(){
-    super();
     this.state = {
-      CourseName: '',
-      DepartmentName: ''
+      showModal: false
     }
   }
 
-  onCourseNameChange = (event) => {
-    this.setState({ CourseName: event.target.value });
-  }
-  onDepartmentNameChange = (event) => {
-    this.setState({ DepartmentName: event.target.value });
-  }
-
-  onAddCourse = () => {
-    fetch('http://localhost:3001/addCourse', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        Course_Name: this.state.CourseName,
-        Department_Name: this.state.DepartmentName
-      })
-    });
+  toggleModal = () => {
+    this.setState({
+        showModal: !this.state.showModal
+    })
   }
 
-  
-  render(){
+  render() {
     return (
-      <>
-        <div className="content" style={{marginLeft:'300px', marginTop:'150px'}}>
-          
-         
-            
-           
-              <Row>
-                <Col sm="10" >
-                  <Card className="card-user"  style={{backgroundColor:'ghostwhite'}}>
-                    <CardHeader>
-                      <CardTitle tag="h5">ADD COURSE</CardTitle>
-                    </CardHeader>
-                    <CardBody>
-                      <Form>
-                        <Row>
-                          <Col className="pr-1" md="6">
-                          <FormGroup>
-                              <label>Course Name</label>
-                              <Input
-                                onChange={this.onCourseNameChange}
-                                placeholder="Enter Course Name"
-                                type="text"
-                              />
-                            </FormGroup>
-                          </Col>
-                         
-                         
-                        </Row>
-                        <Row>
+      <React.Fragment>
+        <Container>
+          <Row>
+            <Col md="12">
+             
+                
+                <h1 className="title">Department</h1>
+
+                <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Department</button>
+                <AddCourseModal opened={this.state.showModal} toggle={this.toggleModal} />
+                  
+                
+                <InputGroup>
+                  <Input placeholder="Search..." />
+                  <InputGroupAddon addonType="append">
+                    <InputGroupText><i className="nc-icon nc-zoom-split" /></InputGroupText>
+                  </InputGroupAddon>
+                </InputGroup>
+                
+                
+                
+                  <Table responsive striped={true}>
+                    <thead className="text-primary" >
+                      <tr>
+                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Department Name</th>
+                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Action</th>
                        
-                          
-                          
-                        </Row>
-                        <Row>
-                        <Col className="pr-1" md="6">
-                           <FormGroup onChange={this.onDepartmentNameChange}>
-                             <label>Department</label>
-                              <select className="form-control">
-                              <option>Select..</option>
-                                <option>ICS</option>
-                          
-                              </select>
-                             
-                           </FormGroup>
-                         </Col>
-
-                        
-                        </Row>
-
-
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>  
+                        <td>ICS Department</td>
                        
-                        <Row>
-                          <div className="update ml-auto mr-auto" >
-                          <Row>
-                          <div className="update ml-auto mr-auto">
-                          <Button
-                              className="btn-round"
-                              color="DANGER"
-                              type="submit" >
-                              CANCEL
-                            </Button>
-                         
-                            <Button
-                              onClick={this.onAddCourse}
-                              className="btn-round"
-                              color="primary"
-                              type="submit"
-                              style={btnAdd}
-                              >
-                              SAVE
-                            </Button>
-                          </div>
-                        </Row>
-                          </div>
-                        </Row>
-                      </Form>
-                    </CardBody>
-                  </Card>
-                </Col>
-              </Row>
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ICS Department</td>
+                       
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ICS Department</td>
+                       
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ICS Department</td>
+                       
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ICS Department</td>
+                       
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ICS Department</td>
+                       
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ICS Department</td>
+                       
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </Table>
+
+                  <Pagination size="sm" aria-label="Department page navigation" className="mt-1" listClassName="justify-content-end">
+                    <PaginationItem>
+                      <PaginationLink first href="#" />
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink previous href="#" />
+                    </PaginationItem>
+                    <PaginationItem active>
+                      <PaginationLink href="#">
+                        1
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink href="#">
+                        2
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink href="#">
+                        3
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink next href="#" />
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink last href="#" />
+                    </PaginationItem>
+                  </Pagination>
+                
             
+            </Col>
             
-         
-      </div>
-      
-    </>
+          </Row>
+        </Container>
+      </React.Fragment>
     );
-  };
+  }
 }
 
 export default Course;

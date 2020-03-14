@@ -98,7 +98,7 @@ class SettingCards extends React.Component {
                         </Card>
                     </Col>
                     <Col lg="3" md="6" sm="6">
-                    <Link to="/adminsettingcourseTable">
+                    <Link to="/adminsettingcourse">
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>

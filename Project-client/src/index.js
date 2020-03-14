@@ -13,7 +13,7 @@ import AdminLayout from "layouts/Admin.jsx";
 import HomepageLayout from "layouts/Homepage.jsx";
 import LoginLayout from "views/Login.jsx";
 import Course from "views/Course.jsx";
-import courseTable from "views/courseTable.jsx";
+
 import studentTable from "views/studentTable.jsx";
 
 // import Department from "views/Department.jsx";
@@ -37,7 +37,6 @@ ReactDOM.render(
       <Route path="/adminsettingcourse" component={Course} />
       <Route path="/adminsettingaddstudent" component={addstudent}/>
       <Route path="/adminsettingaddemployee" component={addemployee}/>
-      <Route path="/adminsettingcourseTable" component={courseTable}/>
       <Route path="/adminsettingdepartment" component={Department} />
       <Route path="/adminsettingdepartment" component={Department} />
       <Route path="/adminsettingstudentTable" component={studentTable}/>
