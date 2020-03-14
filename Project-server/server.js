@@ -30,19 +30,22 @@ server.post('/logint',(req,res) => {
                 }
             const user = rows.map( (row) => {
                return {
-                  usertype: row.Account_UserType,
-                  username: row.Account_Username, 
-                  password:  row.Account_Password
+                  accountname: row.AccountName,
+                  usertype: row.AccountUsertype, 
+                  username:  row.AccountUsername
                  };
             })
                 if (user.length === 1){
                     res.send('Successfully Login!!!');
+                    console.log(user);
                 } else {
                     res.send('Invalid Login!!!');
+                   
                 }
         }); 
-    
+        
 });
+
 
 server.post('/admin/settings', (req, res) => {
     let CreatedAt = new Date();
@@ -76,7 +79,7 @@ server.post('/addMedicine', (req, res) => {
                 res.send("Successfully ");
             }
         })
-    })
+    });
 });
 
 server.post('/addDepartment', (req,res) => {
@@ -85,14 +88,36 @@ server.post('/addDepartment', (req,res) => {
         db.run(query, [
             req.body.Department_Name
         ], (err) => {
+
             if (err) {
                 res.send("Error Inserted table: ", err);
             } else {
                 res.send("Successfully ");
             }
+            
         })
-    })
+    });
 });
+
+server.get('/getDepartment',(req,res) => {
+    let query = "Select * from Department"
+    db.serialize(() => {
+        db.all(query, (err ,rows) => {
+            const Department = rows.map((row) => {
+                return {
+                    Department_Name: row.DepartmentName
+                }
+            })
+            if (err) {
+                res.send(err);
+            } else {
+                res.json(Department);
+            }
+        })
+    });
+});
+
+
 
 server.post('/addCourse', (req, res) => {
     let query = "INSERT INTO Course (CourseName,DepartmentID) VALUES (?,?)"

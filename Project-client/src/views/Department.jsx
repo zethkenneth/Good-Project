@@ -10,8 +10,16 @@ class DepartmentTable extends Component {
     super(props)
 
     this.state = {
-      showModal: false
+      showModal: false,
+      dataTable: []
     }
+  }
+
+  componentDidMount(){
+    
+    fetch('http://localhost:3001/getDepartment')
+      .then(Response => Response.json())
+      .then(Department => console.log(Department));
   }
 
   toggleModal = () => {
