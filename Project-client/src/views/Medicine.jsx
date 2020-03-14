@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import AddDepartmentModal from './AddDepartmentModal';
+import AddMedicineModal from './AddMedicineModal';
 
 import { Button, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 
-class Department extends Component {
+class Medicine extends Component {
 
   constructor(props) {
     super(props)
@@ -34,10 +34,10 @@ class Department extends Component {
         <Container>
           <Row>
             <Col md="12">
-                <h1 className="title">Department</h1>
+                <h1 className="title">Medicine</h1>
 
-                <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Department</button>
-                <AddDepartmentModal opened={this.state.showModal} toggle={this.toggleModal} />
+                <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Medicine</button>
+                <AddMedicineModal opened={this.state.showModal} toggle={this.toggleModal} />
                   
                 
                 <InputGroup>
@@ -185,4 +185,4 @@ class Department extends Component {
   }
 }
 
-export default Department;
+export default Medicine;
