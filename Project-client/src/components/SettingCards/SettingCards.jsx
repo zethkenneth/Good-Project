@@ -1,9 +1,6 @@
 
 import React from "react";
-import Course from "../../views/Course";
-import courseTable from "../../views/courseTable";
-import studentTable from "../../views/studentTable";
-import employeeTable from "../../views/employeeTable";
+
 import {
     Card,
     CardBody,
@@ -21,6 +18,7 @@ class SettingCards extends React.Component {
             <div className="content">
                 <Row>
                     <Col lg="3" md="6" sm="6">
+                        <Link to="/adminsettingaccountTable">
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>
@@ -45,6 +43,7 @@ class SettingCards extends React.Component {
                   </div>
                             </CardFooter>
                         </Card>
+                        </Link>
                     </Col>
                     <Col lg="3" md="6" sm="6">
                         <Card className="card-stats">
@@ -127,7 +126,7 @@ class SettingCards extends React.Component {
                     </Link>
                     </Col>
                     <Col lg="3" md="6" sm="6">
-                   
+                        <Link to="/adminsettingdepartment">
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>
@@ -152,6 +151,7 @@ class SettingCards extends React.Component {
                   </div>
                             </CardFooter>
                         </Card>
+                    </Link>
                     </Col>
                     
                     <Col lg="3" md="6" sm="6">

@@ -20,7 +20,7 @@ import React from "react";
 
 // reactstrap components
 import { Card, CardHeader, CardBody, CardTitle, Row, Col, Table } from "reactstrap";
-import Course from "./Course";
+
 import { Link } from 'react-router-dom';
 
 const btnAdd={

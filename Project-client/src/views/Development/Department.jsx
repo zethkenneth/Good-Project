@@ -1,11 +1,6 @@
 import React from "react";
 
-
-
-
-// reactstrap components
 import {
-
   Button,
   Card,
   CardHeader,
@@ -17,42 +12,32 @@ import {
   Row,
   Col
 } from "reactstrap";
-const btnAdd={
- 
-  backgroundColor: "#0083ce"
-}
 
-class Course extends React.Component {
+class Department extends React.Component {
   constructor(){
     super();
     this.state = {
-      CourseName: '',
       DepartmentName: ''
     }
   }
 
-  onCourseNameChange = (event) => {
-    this.setState({ CourseName: event.target.value });
-  }
+
   onDepartmentNameChange = (event) => {
     this.setState({ DepartmentName: event.target.value });
   }
 
-  onAddCourse = () => {
-    fetch('http://localhost:3001/addCourse', {
+  onAddDepartment = () => {
+    fetch('http://localhost:3001/addDepartment', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        Course_Name: this.state.CourseName,
-        Department_Name: this.state.DepartmentName
+        Department_Name: this.state.DepartmentName,
       })
-    });
+    }); 
   }
-
-  
   render(){
     return (
-      <>
+      <React.Fragment>
         <div className="content" style={{marginLeft:'300px', marginTop:'150px'}}>
           
          
@@ -62,16 +47,16 @@ class Course extends React.Component {
                 <Col sm="10" >
                   <Card className="card-user"  style={{backgroundColor:'ghostwhite'}}>
                     <CardHeader>
-                      <CardTitle tag="h5">ADD COURSE</CardTitle>
+                      <CardTitle tag="h5">ADD Department</CardTitle>
                     </CardHeader>
                     <CardBody>
                       <Form>
                         <Row>
                           <Col className="pr-1" md="6">
                           <FormGroup>
-                              <label>Course Name</label>
+                              <label>Department Name</label>
                               <Input
-                                onChange={this.onCourseNameChange}
+                                onChange={this.onDepartmentNameChange}
                                 placeholder="Enter Course Name"
                                 type="text"
                               />
@@ -85,21 +70,7 @@ class Course extends React.Component {
                           
                           
                         </Row>
-                        <Row>
-                        <Col className="pr-1" md="6">
-                           <FormGroup onChange={this.onDepartmentNameChange}>
-                             <label>Department</label>
-                              <select className="form-control">
-                              <option>Select..</option>
-                                <option>ICS</option>
-                          
-                              </select>
-                             
-                           </FormGroup>
-                         </Col>
-
-                        
-                        </Row>
+  
 
 
                        
@@ -115,12 +86,10 @@ class Course extends React.Component {
                             </Button>
                          
                             <Button
-                              onClick={this.onAddCourse}
+                            onClick={this.onAddDepartment}
                               className="btn-round"
                               color="primary"
-                              type="submit"
-                              style={btnAdd}
-                              >
+                              type="submit">
                               SAVE
                             </Button>
                           </div>
@@ -137,9 +106,9 @@ class Course extends React.Component {
          
       </div>
       
-    </>
+    </React.Fragment>
     );
   };
 }
 
-export default Course;
+export default Department;

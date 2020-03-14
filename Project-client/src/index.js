@@ -15,7 +15,12 @@ import LoginLayout from "views/Login.jsx";
 import Course from "views/Course.jsx";
 import courseTable from "views/courseTable.jsx";
 import studentTable from "views/studentTable.jsx";
-import employeeTable from "views/employeeTable";
+
+// import Department from "views/Department.jsx";
+import Department from "views/Department.jsx";
+import Account from "views/Account.jsx";
+import AccountTable from "views/AccountTable.jsx";
+import employeeTable from "views/employeeTable.jsx";
 import addstudent from "views/addstudent";
 import addemployee from "views/addemployee";
 
@@ -26,11 +31,15 @@ ReactDOM.render(
     <Switch>
       <Route path="/homepage" component={HomepageLayout} />
       <Route path="/login" component={LoginLayout} />
-      <Route path="/admin" render={props => <AdminLayout {...props} />} />  
+      <Route path="/admin" render={props => <AdminLayout {...props} />} /> 
+      <Route path="/adminsettingaccount" component={Account} />
+      <Route path="/adminsettingaccountTable" component={AccountTable} /> 
       <Route path="/adminsettingcourse" component={Course} />
       <Route path="/adminsettingaddstudent" component={addstudent}/>
       <Route path="/adminsettingaddemployee" component={addemployee}/>
       <Route path="/adminsettingcourseTable" component={courseTable}/>
+      <Route path="/adminsettingdepartment" component={Department} />
+      <Route path="/adminsettingdepartment" component={Department} />
       <Route path="/adminsettingstudentTable" component={studentTable}/>
       <Route path="/adminsettingemployeeTable" component={employeeTable}/>
       <Redirect to="/homepage" />
