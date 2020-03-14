@@ -38,8 +38,8 @@ const ModalExample = (props) => {
               <Card>
                 <CardHeader>
                   <CardTitle tag="h4" style={{color:'#0083ce'}}><b>Medicine</b>List</CardTitle>
-                  <button type="submit" class="btn-round btn btn-primary" style={btnAdd}>Add Medicine</button>
                   <input placeholder="Search..." type="text" class="form-control" style={{width:'200px'}}></input>
+                  <button type="submit" class="btn-round btn btn-primary" style={btnAdd}>Add Medicine</button>
                 </CardHeader>
                 <CardBody>
                   <Table responsive>

@@ -1,15 +1,7 @@
 import React from "react";
-import classnames from 'classnames';
-
-
 
 // reactstrap components
 import {
-  TabContent, 
-  TabPane, 
-  Nav, 
-  NavItem, 
-  NavLink, 
   Button,
   Card,
   CardHeader,
