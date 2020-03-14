@@ -155,7 +155,7 @@ class SettingCards extends React.Component {
                     </Col>
                     
                     <Col lg="3" md="6" sm="6">
-                    <Link to="/adminsettingstudentTable">
+                    <Link to="/adminsettingStudent">
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>
@@ -211,6 +211,7 @@ class SettingCards extends React.Component {
                         </Link>
                     </Col>
                     <Col lg="3" md="6" sm="6">
+                    <Link to="/adminsettingMedicine">
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>
@@ -235,6 +236,7 @@ class SettingCards extends React.Component {
                   </div>
                             </CardFooter>
                         </Card>
+                        </Link>
                     </Col>
                 </Row>
             </div>

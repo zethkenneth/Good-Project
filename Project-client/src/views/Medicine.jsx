@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import AddCourseModal from './AddCourseModal';
+import AddMedicineModal from './AddMedicineModal';
 
 import { Card, CardHeader, CardBody, CardTitle, CardText, Button, CardFooter, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 
-class Course extends Component {
+class Medicine extends Component {
 
   constructor(props) {
     super(props)
@@ -28,10 +28,10 @@ class Course extends Component {
             <Col md="12">
              
                 
-                <h1 className="title">COURSE</h1>
+                <h1 className="title">MEDICINE</h1>
 
-                <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Course</button>
-                <AddCourseModal opened={this.state.showModal} toggle={this.toggleModal} />
+                <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Medicine</button>
+                <AddMedicineModal opened={this.state.showModal} toggle={this.toggleModal} />
                   
                 
                 <InputGroup>
@@ -180,4 +180,4 @@ class Course extends Component {
   }
 }
 
-export default Course;
+export default Medicine;
