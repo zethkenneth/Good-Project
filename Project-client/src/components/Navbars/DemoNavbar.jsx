@@ -191,16 +191,16 @@ class Header extends React.Component {
                 isOpen={this.state.acctDropdownOpen}
                 toggle={e => this.acctDropdownToggle(e)}
               >
-                <DropdownToggle caret nav>
+               {/*} <DropdownToggle caret nav>
                   <i className="nc-icon nc-single-02 text-primary" />
                   <p>
                     <span className="d-lg-none d-md-block">Some Actions</span>
                   </p>
                 </DropdownToggle>
-                <DropdownMenu right>
+              <DropdownMenu right>
                   <DropdownItem tag="a">Account</DropdownItem>
                   <DropdownItem tag="a">Logout</DropdownItem>
-                </DropdownMenu>
+      </DropdownMenu>*/}
               </Dropdown>
 
              
