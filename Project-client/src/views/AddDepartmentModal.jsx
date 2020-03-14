@@ -15,14 +15,15 @@ import {
   Modal, 
   ModalHeader, 
   ModalBody, 
-  ModalFooter } from 'reactstrap';
+  ModalFooter
+  } from 'reactstrap';
 
 class AddDepartmentModal extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      DepartmentName: ''
+      departmentName: ''
     }
   }
 
@@ -35,7 +36,7 @@ class AddDepartmentModal extends Component {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        Department_Name: this.state.DepartmentName,
+        Department_Name: this.state.departmentName,
       })
     }); 
   }
@@ -44,78 +45,40 @@ class AddDepartmentModal extends Component {
     // const { signInUsername, signInPassword } = this.state
     return (
       <React.Fragment>
-        <div className="content" style={{marginLeft:'300px', marginTop:'150px'}}>
-          
-         
-            
-           <Modal isOpen={this.props.opened} toggle={this.props.toggle} >
-              <Row>
-                <Col sm="10" >
-                  <Card className="card-user"  style={{backgroundColor:'ghostwhite'}}>
-                    <CardHeader>
-                      <CardTitle tag="h5">ADD Department</CardTitle>
-                    </CardHeader>
-                    <CardBody>
-                      <Form>
-                        <Row>
-                          <Col className="pr-1" md="6">
-                          <FormGroup>
-                              <label>Department Name</label>
-                              <Input
-                                onChange={this.onDepartmentNameChange}
-                                placeholder="Enter Course Name"
-                                type="text"
-                              />
-                            </FormGroup>
-                          </Col>
-                         
-                         
-                        </Row>
-                        <Row>
-                       
-                          
-                          
-                        </Row>
-  
-
-
-                       
-                        <Row>
-                          <div className="update ml-auto mr-auto" >
-                          <Row>
-                          <div className="update ml-auto mr-auto">
-                          <Button
-                              className="btn-round"
-                              color="DANGER"
-                              type="submit" 
-                              onClick={this.props.toggle}>
-                              CANCEL
-                            </Button>
-                         
-                            <Button
-                            onClick={this.onAddDepartment}
-                              className="btn-round"
-                              color="primary"
-                              type="submit">
-                              SAVE
-                            </Button>
-                          </div>
-                        </Row>
-                          </div>
-                        </Row>
-                      </Form>
-                    </CardBody>
-                  </Card>
-                </Col>
-              </Row>
-            
-            </Modal>
-         
-      </div>
-      
+      <Modal isOpen={this.props.opened} toggle={this.props.toggle}>
+        <ModalHeader toggle={this.props.toggle}>Add Department</ModalHeader>
+        <ModalBody>
+          <Form>
+            <FormGroup>
+              <label for="departmentName">Department Name</label>
+              <Input
+                onChange={this.onDepartmentNameChange}
+                placeholder="Enter Department Name"
+                type="text"
+                id="departmentName"
+              />
+            </FormGroup>
+              
+            <Button
+              className="btn-round"
+              color="danger"
+              type="submit" 
+              onClick={this.props.toggle}>
+              CANCEL
+            </Button>
+           
+            <Button
+              onClick={this.onAddDepartment}
+              className="btn-round"
+              color="primary"
+              type="submit">
+              SAVE
+            </Button>
+          </Form>
+        </ModalBody>
+      </Modal>
     </React.Fragment>
     );
-
   }
 }
 

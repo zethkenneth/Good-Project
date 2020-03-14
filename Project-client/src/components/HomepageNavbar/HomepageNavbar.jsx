@@ -13,7 +13,6 @@ class HomepageNavbar extends React.Component {
         this.state ={
             showModal: false
         }
-
     }
 
     toggleModal = () => {

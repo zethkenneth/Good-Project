@@ -16,8 +16,8 @@ import Course from "views/Course.jsx";
 import courseTable from "views/courseTable.jsx";
 import studentTable from "views/studentTable.jsx";
 
+// import Department from "views/Department.jsx";
 import Department from "views/Department.jsx";
-import DepartmentTable from "views/DepartmentTable.jsx";
 import Account from "views/Account.jsx";
 import AccountTable from "views/AccountTable.jsx";
 import employeeTable from "views/employeeTable.jsx";
@@ -39,7 +39,7 @@ ReactDOM.render(
       <Route path="/adminsettingaddemployee" component={addemployee}/>
       <Route path="/adminsettingcourseTable" component={courseTable}/>
       <Route path="/adminsettingdepartment" component={Department} />
-      <Route path="/adminsettingdepartmenttable" component={DepartmentTable} />
+      <Route path="/adminsettingdepartment" component={Department} />
       <Route path="/adminsettingstudentTable" component={studentTable}/>
       <Route path="/adminsettingemployeeTable" component={employeeTable}/>
       <Redirect to="/homepage" />
