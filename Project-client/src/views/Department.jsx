@@ -1,17 +1,25 @@
 import React, { Component } from "react";
 import AddDepartmentModal from './AddDepartmentModal';
 
-import { Card, CardHeader, CardBody, CardTitle, CardText, Button, CardFooter, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
+import { Button, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 
-class DepartmentTable extends Component {
+class Department extends Component {
 
   constructor(props) {
     super(props)
 
     this.state = {
-      showModal: false
+      showModal: false,
+      dataTable: []
     }
+  }
+
+  componentDidMount(){
+    
+    fetch('http://localhost:3001/getDepartment')
+      .then(Response => Response.json())
+      .then(Department => console.log(Department));
   }
 
   toggleModal = () => {
@@ -26,8 +34,6 @@ class DepartmentTable extends Component {
         <Container>
           <Row>
             <Col md="12">
-             
-                
                 <h1 className="title">Department</h1>
 
                 <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Department</button>
@@ -180,4 +186,4 @@ class DepartmentTable extends Component {
   }
 }
 
-export default DepartmentTable;
+export default Department;

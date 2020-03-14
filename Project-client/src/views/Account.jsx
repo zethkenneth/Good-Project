@@ -1,160 +1,189 @@
-import React from "react";
+import React, { Component } from "react";
+import AddDepartmentModal from './AddDepartmentModal';
+
+import { Button, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
-  FormGroup,
-  Form,
-  Input,
-  Row,
-  Col
-} from "reactstrap";
+class Department extends Component {
 
-class Account extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
+
     this.state = {
-      Username: '',
-      Password: '',
-      AccountName: '',
-      AccountType: ''
-    } 
-  }
-
-
-
-  onUsernameChange = (event) => {
-    this.setState({ Username: event.target.value });
-    console.log(this.state.Username);
-  }
-
-  onPasswordChange = (event) => {
-    this.setState({ Password: event.target.value });
-    console.log(this.state.Password);
-  }
-
-  onAccountNameChange = (event) => {
-    this.setState({ AccountName: event.target.value });
-    console.log(this.state.AccountName);
-  }
-
-  onAccountTypeChange = (event) => {  
-    this.setState({ AccountType: event.target.value });
-    console.log(this.state.AccountType);
-  }
-
-  
-  onSubmitSignIn = () => { 
-        fetch('http://localhost:3001/logint',{
-            method: 'post',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                Account_Name: this.state.AccountName,
-                Account_UserType: this.state.AccountType,
-                Account_Username: this.state.Username,
-                Account_Password: this.state.Password,
-            })
-        }); 
+      showModal: false,
+      dataTable: []
     }
+  }
 
+  componentDidMount(){
+    
+    fetch('http://localhost:3001/getDepartment')
+      .then(Response => Response.json())
+      .then(Department => console.log(Department));
+  }
 
+  toggleModal = () => {
+    this.setState({
+        showModal: !this.state.showModal
+    })
+  }
 
-  render(){
+  render() {
     return (
-      <>
-        <div className="content" style={{marginLeft:'300px', marginTop:'150px'}}>
+      <React.Fragment>
+        <Container>
           <Row>
-            <Col sm="12">
-              <Card className="card-user">
-                <CardHeader>
-                  <CardTitle tag="h5">Account</CardTitle>
-                </CardHeader>
-                <CardBody>
-                  <Form>
-                    <Row>
-                      <Col className="pr-1" md="5">
-                        <FormGroup>
-                          <label>Username</label>
-                          <Input
-                            onChange={this.onUsernameChange}
-                            placeholder="Username"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="pr-1" md="5">
-                        <FormGroup>
-                          <label>Password</label>
-                          <Input
-                            onChange={this.onPasswordChange}
-                            placeholder="Password"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="pr-1" md="5">
-                        <FormGroup>
-                          <label>Account Name</label>
-                          <Input
-                            onChange={this.onAccountNameChange}
-                            placeholder="Account Name"
-                            type="text"
-                          />
-                        </FormGroup>
-                      </Col>
-                      <Col className="pr-1" md="5">
-                        <FormGroup>
-                          <label>Account Status</label>
-                          <select className="form-control">
-                            <option>1</option>
-                            <option>0</option>
-                          </select>
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="pr-1" md="5">
-                      <FormGroup>
-                          <label>Account Type</label>
-                        <select className="form-control" onChange={this.onAccountTypeChange}>
-                            <option>Select...</option>
-                            <option>Admin</option>
-                            <option>Clinic Staff</option>
-                            <option>Clinic Assistant</option>
-                          </select>
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <div className="update ml-auto mr-auto">
-                        <Row>
-                          <div className="update ml-auto mr-auto">
-                            <Button
-                              onClick={this.onSubmitAddAccount}
-                              className="btn-round"
-                              color="primary"
-                              type="submit">
-                              Save
-                            </Button>
-                          </div>
-                        </Row>
-                      </div>
-                    </Row>
-                  </Form>
-                </CardBody>
-              </Card>
+            <Col md="12">
+                <h1 className="title">Department</h1>
+
+                <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Department</button>
+                <AddDepartmentModal opened={this.state.showModal} toggle={this.toggleModal} />
+                  
+                
+                <InputGroup>
+                  <Input placeholder="Search..." />
+                  <InputGroupAddon addonType="append">
+                    <InputGroupText><i className="nc-icon nc-zoom-split" /></InputGroupText>
+                  </InputGroupAddon>
+                </InputGroup>
+                
+                
+                
+                  <Table responsive striped={true}>
+                    <thead className="text-primary" >
+                      <tr>
+                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Department Name</th>
+                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Action</th>
+                       
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>  
+                        <td>ICS Department</td>
+                       
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ICS Department</td>
+                       
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ICS Department</td>
+                       
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ICS Department</td>
+                       
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ICS Department</td>
+                       
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ICS Department</td>
+                       
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>ICS Department</td>
+                       
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </Table>
+
+                  <Pagination size="sm" aria-label="Department page navigation" className="mt-1" listClassName="justify-content-end">
+                    <PaginationItem>
+                      <PaginationLink first href="#" />
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink previous href="#" />
+                    </PaginationItem>
+                    <PaginationItem active>
+                      <PaginationLink href="#">
+                        1
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink href="#">
+                        2
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink href="#">
+                        3
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink next href="#" />
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink last href="#" />
+                    </PaginationItem>
+                  </Pagination>
+                
+            
             </Col>
+            
           </Row>
-      </div>
-    </>
-    )
-  };
+        </Container>
+      </React.Fragment>
+    );
+  }
 }
 
-export default Account;
+export default Department;
