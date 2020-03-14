@@ -4,7 +4,7 @@ import AddDepartmentModal from './AddDepartmentModal';
 import { Button, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 
-class DepartmentTable extends Component {
+class Department extends Component {
 
   constructor(props) {
     super(props)
@@ -34,8 +34,6 @@ class DepartmentTable extends Component {
         <Container>
           <Row>
             <Col md="12">
-             
-                
                 <h1 className="title">Department</h1>
 
                 <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Department</button>
@@ -188,4 +186,4 @@ class DepartmentTable extends Component {
   }
 }
 
-export default DepartmentTable;
+export default Department;

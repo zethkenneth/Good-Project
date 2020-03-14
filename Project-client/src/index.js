@@ -19,8 +19,8 @@ import studentTable from "views/studentTable.jsx";
 // import Department from "views/Department.jsx";
 import Department from "views/Department.jsx";
 import Account from "views/Account.jsx";
-import AccountTable from "views/AccountTable.jsx";
-import employeeTable from "views/employeeTable.jsx";
+import AccountTable from "views/Account.jsx";
+import employeeTable from "views/Employee.jsx";
 import addstudent from "views/addstudent";
 import addemployee from "views/addemployee";
 
