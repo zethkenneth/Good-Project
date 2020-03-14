@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import {
+import { 
+  Row,
+  Col,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardBody,
   Form, 
   FormGroup, 
   Input, 
@@ -11,7 +18,7 @@ import {
   ModalFooter
   } from 'reactstrap';
 
-class AddMedicineModal extends Component {
+class AddStudentModal extends Component {
 
   constructor(props) {
     super(props)
@@ -75,4 +82,4 @@ class AddMedicineModal extends Component {
   }
 }
 
-export default AddMedicineModal;
+export default AddStudentModal;
