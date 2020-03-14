@@ -1,14 +1,9 @@
 import React, { Component } from "react";
 import AddDepartmentModal from './AddDepartmentModal';
 
-import { Card, CardHeader, CardBody, CardTitle, Row, Col, Table } from "reactstrap";
+import { Card, CardHeader, CardBody, CardTitle, CardText, Button, CardFooter, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
-import { Link } from 'react-router-dom';
 
-const btnAdd={
-    marginLeft:"80%",
-    backgroundColor: "#0083ce"
-  }
 class DepartmentTable extends Component {
 
   constructor(props) {
@@ -28,81 +23,158 @@ class DepartmentTable extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="content">
+        <Container>
           <Row>
             <Col md="12">
-              <Card>
-                <CardHeader>
-                  <CardTitle tag="h4">ADD Department</CardTitle>
-                  <input placeholder="Search..." type="text" class="form-control" style={{width:'200px'}}></input>
-                </CardHeader>
+             
                 
-                <button onClick={this.toggleModal} class="btn-round btn btn-primary" style={btnAdd}>Add Department</button>
+                <h1 className="title">Department</h1>
+
+                <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Department</button>
                 <AddDepartmentModal opened={this.state.showModal} toggle={this.toggleModal} />
+                  
+                
+                <InputGroup>
+                  <Input placeholder="Search..." />
+                  <InputGroupAddon addonType="append">
+                    <InputGroupText><i className="nc-icon nc-zoom-split" /></InputGroupText>
+                  </InputGroupAddon>
+                </InputGroup>
                 
                 
-                <CardBody style={{width:'1500px'}}>
-                  <Table responsive>
+                
+                  <Table responsive striped={true}>
                     <thead className="text-primary" >
                       <tr>
-                        <th style={{color:'white', backgroundColor:'deepskyblue'}}>Course Name</th>
                         <th style={{color:'white', backgroundColor:'deepskyblue'}}>Department Name</th>
                         <th style={{color:'white', backgroundColor:'deepskyblue'}}>Action</th>
                        
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>BS CS</td>
+                      <tr>  
                         <td>ICS Department</td>
                        
-                        <td>EDIT</td>
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
                       </tr>
                       <tr>
-                      <td>BS CS</td>
                         <td>ICS Department</td>
                        
-                        <td>EDIT</td>
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
                       </tr>
                       <tr>
-                      <td>BS CS</td>
                         <td>ICS Department</td>
                        
-                        <td>EDIT</td>
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
                       </tr>
                       <tr>
-                      <td>BS CS</td>
                         <td>ICS Department</td>
                        
-                        <td>EDIT</td>
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
                       </tr>
                       <tr>
-                      <td>BS CS</td>
                         <td>ICS Department</td>
                        
-                        <td>EDIT</td>
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
                       </tr>
                       <tr>
-                      <td>BS CS</td>
                         <td>ICS Department</td>
                        
-                        <td>EDIT</td>
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
                       </tr>
                       <tr>
-                      <td>BS CS</td>
                         <td>ICS Department</td>
                        
-                        <td>EDIT</td>
+                        <td>
+                          <Button className="btn btn-success btn-icon btn-sm mr-1">
+                            <i className="fa fa-edit"/>
+                          </Button>
+                          <Button className="btn btn-danger btn-icon btn-sm">
+                            <i className="fa fa-times"/>
+                          </Button>
+                        </td>
                       </tr>
                       
                     </tbody>
                   </Table>
-                </CardBody>
-              </Card>
+
+                  <Pagination size="sm" aria-label="Department page navigation" className="mt-1" listClassName="justify-content-end">
+                    <PaginationItem>
+                      <PaginationLink first href="#" />
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink previous href="#" />
+                    </PaginationItem>
+                    <PaginationItem active>
+                      <PaginationLink href="#">
+                        1
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink href="#">
+                        2
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink href="#">
+                        3
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink next href="#" />
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink last href="#" />
+                    </PaginationItem>
+                  </Pagination>
+                
+            
             </Col>
             
           </Row>
-        </div>
+        </Container>
       </React.Fragment>
     );
   }
