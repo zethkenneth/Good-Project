@@ -22,6 +22,7 @@ import PatientRecords from "views/PatientRecords.jsx";
 import Setting from "views/Setting.jsx";
 import Inventory from "views/Inventory.jsx";
 import PatientInfo from "views/PatientInfo.jsx";
+import Homepage from "layouts/Homepage.jsx";
 
 
 
@@ -63,6 +64,14 @@ var routes = [
     icon: "nc-icon nc-settings-gear-65",
     component: Setting,
     layout: "/admin"
+  },
+  {
+    path: "/logout",
+    name: "Logout",
+    icon: "fas fa-sign-out-alt",
+    component: Homepage,
+    layout: "/logout"
+    
   }
 
   
