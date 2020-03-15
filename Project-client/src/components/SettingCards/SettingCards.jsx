@@ -18,7 +18,7 @@ class SettingCards extends React.Component {
             <div className="content">
                 <Row>
                     <Col lg="3" md="6" sm="6">
-                        <Link to="/adminsettingaccountTable">
+                        <Link to="/adminsettingaccount">
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>
@@ -183,7 +183,7 @@ class SettingCards extends React.Component {
                         </Link>
                     </Col>
                     <Col lg="3" md="6" sm="6">
-                    <Link to="/adminsettingemployeeTable">
+                    <Link to="/adminsettingemployee">
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>

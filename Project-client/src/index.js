@@ -14,12 +14,11 @@ import HomepageLayout from "layouts/Homepage.jsx";
 import LoginLayout from "views/Login.jsx";
 import Course from "views/Course.jsx";
 
-
 // import Department from "views/Department.jsx";
 import Department from "views/Department.jsx";
 import Account from "views/Account.jsx";
-import AccountTable from "views/AccountTable.jsx";
-import employeeTable from "views/employeeTable.jsx";
+import AccountTable from "views/Account.jsx";
+import Employee from "views/Employee.jsx";
 import Student from "views/Student";
 import addemployee from "views/addemployee";
 import Medicine from "views/Medicine";
@@ -33,14 +32,14 @@ ReactDOM.render(
       <Route path="/login" component={LoginLayout} />
       <Route path="/admin" render={props => <AdminLayout {...props} />} /> 
       <Route path="/adminsettingaccount" component={Account} />
-      <Route path="/adminsettingaccountTable" component={AccountTable} /> 
+      
       <Route path="/adminsettingcourse" component={Course} />
-      <Route path="/adminsettingMedicine" component={Medicine}/>
       <Route path="/adminsettingaddemployee" component={addemployee}/>
       <Route path="/adminsettingdepartment" component={Department} />
       <Route path="/adminsettingdepartment" component={Department} />
-      <Route path="/adminsettingStudent" component={Student}/>
-      <Route path="/adminsettingemployeeTable" component={employeeTable}/>
+      <Route path="/adminsettingstudent" component={Student}/>
+      <Route path="/adminsettingemployee" component={Employee}/>
+      <Route path="/adminsettingMedicine" component={Medicine}/>
       <Redirect to="/homepage" />
     </Switch>
   </Router>,

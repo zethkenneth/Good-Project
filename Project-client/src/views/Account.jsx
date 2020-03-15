@@ -1,25 +1,17 @@
 import React, { Component } from "react";
-import AddDepartmentModal from './AddDepartmentModal';
+import AddAccountModal from './AddAccountModal';
 
-import { Button, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
+import { Card, CardHeader, CardBody, CardTitle, CardText, Button, CardFooter, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 
-class Department extends Component {
+class Account extends Component {
 
   constructor(props) {
     super(props)
 
     this.state = {
-      showModal: false,
-      dataTable: []
+      showModal: false
     }
-  }
-
-  componentDidMount(){
-    
-    fetch('http://localhost:3001/getDepartment')
-      .then(Response => Response.json())
-      .then(Department => console.log(Department));
   }
 
   toggleModal = () => {
@@ -34,10 +26,12 @@ class Department extends Component {
         <Container>
           <Row>
             <Col md="12">
-                <h1 className="title">Department</h1>
+             
+                
+                <h1 className="title">ACCOUNT</h1>
 
-                <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Department</button>
-                <AddDepartmentModal opened={this.state.showModal} toggle={this.toggleModal} />
+                <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Account</button>
+                <AddAccountModal opened={this.state.showModal} toggle={this.toggleModal} />
                   
                 
                 <InputGroup>
@@ -186,4 +180,4 @@ class Department extends Component {
   }
 }
 
-export default Department;
+export default Account;

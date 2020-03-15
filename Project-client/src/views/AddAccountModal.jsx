@@ -18,7 +18,7 @@ import {
   ModalFooter
   } from 'reactstrap';
 
-class AddCourseModal extends Component {
+class AddAccountModal extends Component {
 
   constructor(props) {
     super(props)
@@ -46,14 +46,14 @@ class AddCourseModal extends Component {
     return (
       <React.Fragment>
       <Modal isOpen={this.props.opened} toggle={this.props.toggle}>
-        <ModalHeader toggle={this.props.toggle}>Add Course</ModalHeader>
+        <ModalHeader toggle={this.props.toggle}>Add Account</ModalHeader>
         <ModalBody>
           <Form>
             <FormGroup>
-              <label for="departmentName">Course Name</label>
+              <label for="departmentName">Account Name</label>
               <Input
                 onChange={this.onDepartmentNameChange}
-                placeholder="Enter Course Name"
+                placeholder="Enter Account Name"
                 type="text"
                 id="departmentName"
               />
@@ -82,4 +82,4 @@ class AddCourseModal extends Component {
   }
 }
 
-export default AddCourseModal;
+export default AddAccountModal;
