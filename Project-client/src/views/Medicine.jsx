@@ -10,8 +10,16 @@ class Medicine extends Component {
     super(props)
 
     this.state = {
-      showModal: false
+      showModal: false,
+      dataTable: []
     }
+  }
+
+  componentDidMount(){
+    
+    fetch('http://localhost:3001/getDepartment')
+      .then(Response => Response.json())
+      .then(Department => console.log(Department));
   }
 
   toggleModal = () => {
@@ -26,9 +34,7 @@ class Medicine extends Component {
         <Container>
           <Row>
             <Col md="12">
-             
-                
-                <h1 className="title">MEDICINE</h1>
+                <h1 className="title">Medicine</h1>
 
                 <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Medicine</button>
                 <AddMedicineModal opened={this.state.showModal} toggle={this.toggleModal} />
@@ -48,7 +54,6 @@ class Medicine extends Component {
                       <tr>
                         <th style={{color:'white', backgroundColor:'deepskyblue'}}>Department Name</th>
                         <th style={{color:'white', backgroundColor:'deepskyblue'}}>Action</th>
-                       
                       </tr>
                     </thead>
                     <tbody>

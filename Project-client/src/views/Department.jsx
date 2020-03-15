@@ -54,7 +54,6 @@ class Department extends Component {
                       <tr>
                         <th style={{color:'white', backgroundColor:'deepskyblue'}}>Department Name</th>
                         <th style={{color:'white', backgroundColor:'deepskyblue'}}>Action</th>
-                       
                       </tr>
                     </thead>
                     <tbody>

@@ -155,7 +155,7 @@ class SettingCards extends React.Component {
                     </Col>
                     
                     <Col lg="3" md="6" sm="6">
-                    <Link to="/adminsettingStudent">
+                    <Link to="/adminsettingstudentTable">
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>
@@ -211,7 +211,7 @@ class SettingCards extends React.Component {
                         </Link>
                     </Col>
                     <Col lg="3" md="6" sm="6">
-                    <Link to="/adminsettingMedicine">
+                        <Link to="/adminsettingmedicineTable">
                         <Card className="card-stats">
                             <CardBody>
                                 <Row>
@@ -233,7 +233,7 @@ class SettingCards extends React.Component {
                                 <hr />
                                 <div className="stats">
                                     <i className="far fa-clock" /> In the last hour
-                  </div>
+                                 </div>
                             </CardFooter>
                         </Card>
                         </Link>

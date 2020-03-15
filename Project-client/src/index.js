@@ -17,11 +17,10 @@ import Course from "views/Course.jsx";
 // import Department from "views/Department.jsx";
 import Department from "views/Department.jsx";
 import Account from "views/Account.jsx";
-import AccountTable from "views/Account.jsx";
 import Employee from "views/Employee.jsx";
 import Student from "views/Student";
 import addemployee from "views/addemployee";
-import Medicine from "views/Medicine";
+import Medicine from "views/Medicine.jsx";
 
 const hist = createBrowserHistory();
 
@@ -36,7 +35,7 @@ ReactDOM.render(
       <Route path="/adminsettingcourse" component={Course} />
       <Route path="/adminsettingaddemployee" component={addemployee}/>
       <Route path="/adminsettingdepartment" component={Department} />
-      <Route path="/adminsettingdepartment" component={Department} />
+      
       <Route path="/adminsettingstudent" component={Student}/>
       <Route path="/adminsettingemployee" component={Employee}/>
       <Route path="/adminsettingMedicine" component={Medicine}/>
