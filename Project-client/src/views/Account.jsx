@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import AddDepartmentModal from './AddDepartmentModal';
+import AddAccountModal from './AddAccountModal';
 
 import { Button, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 
-class Department extends Component {
+class Account extends Component {
 
   constructor(props) {
     super(props)
@@ -16,7 +16,7 @@ class Department extends Component {
   }
 
   componentDidMount(){
-    
+
     fetch('http://localhost:3001/getDepartment')
       .then(Response => Response.json())
       .then(Department => console.log(Department));
@@ -34,10 +34,10 @@ class Department extends Component {
         <Container>
           <Row>
             <Col md="12">
-                <h1 className="title">Department</h1>
+                <h1 className="title">Account</h1>
 
                 <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Department</button>
-                <AddDepartmentModal opened={this.state.showModal} toggle={this.toggleModal} />
+                <AddAccountModal opened={this.state.showModal} toggle={this.toggleModal} />
                   
                 
                 <InputGroup>
@@ -186,4 +186,4 @@ class Department extends Component {
   }
 }
 
-export default Department;
+export default Account;

@@ -1,17 +1,25 @@
 import React, { Component } from "react";
-import AddCourseModal from './AddCourseModal';
+import AddMedicineModal from './AddMedicineModal';
 
 import {  Button, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 
-class Course extends Component {
+class Medicine extends Component {
 
   constructor(props) {
     super(props)
 
     this.state = {
-      showModal: false
+      showModal: false,
+      dataTable: []
     }
+  }
+
+  componentDidMount(){
+    
+    fetch('http://localhost:3001/getDepartment')
+      .then(Response => Response.json())
+      .then(Department => console.log(Department));
   }
 
   toggleModal = () => {
@@ -26,12 +34,10 @@ class Course extends Component {
         <Container>
           <Row>
             <Col md="12">
-             
-                
-                <h1 className="title">COURSE</h1>
+                <h1 className="title">Medicine</h1>
 
-                <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Course</button>
-                <AddCourseModal opened={this.state.showModal} toggle={this.toggleModal} />
+                <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Medicine</button>
+                <AddMedicineModal opened={this.state.showModal} toggle={this.toggleModal} />
                   
                 
                 <InputGroup>
@@ -48,7 +54,6 @@ class Course extends Component {
                       <tr>
                         <th style={{color:'white', backgroundColor:'deepskyblue'}}>Department Name</th>
                         <th style={{color:'white', backgroundColor:'deepskyblue'}}>Action</th>
-                       
                       </tr>
                     </thead>
                     <tbody>
@@ -180,4 +185,4 @@ class Course extends Component {
   }
 }
 
-export default Course;
+export default Medicine;

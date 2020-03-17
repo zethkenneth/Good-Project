@@ -7,10 +7,11 @@ import {
   Button, 
   Modal, 
   ModalHeader, 
-  ModalBody
+  ModalBody, 
+
   } from 'reactstrap';
 
-class AddDepartmentModal extends Component {
+class AddMedicineModal extends Component {
 
   constructor(props) {
     super(props)
@@ -34,18 +35,18 @@ class AddDepartmentModal extends Component {
   }
 
   render() {
-    // const { signInUsername, signInPassword } = this.state
+ 
     return (
       <React.Fragment>
       <Modal isOpen={this.props.opened} toggle={this.props.toggle}>
-        <ModalHeader toggle={this.props.toggle}>Add Employee</ModalHeader>
+        <ModalHeader toggle={this.props.toggle}>Add Medicine</ModalHeader>
         <ModalBody>
           <Form>
             <FormGroup>
-              <label for="departmentName">Employee Name</label>
+              <label for="departmentName">Medicine Name</label>
               <Input
                 onChange={this.onDepartmentNameChange}
-                placeholder="Enter Employee Name"
+                placeholder="Enter Medicine Name"
                 type="text"
                 id="departmentName"
               />
@@ -74,4 +75,4 @@ class AddDepartmentModal extends Component {
   }
 }
 
-export default AddDepartmentModal;
+export default AddMedicineModal;
