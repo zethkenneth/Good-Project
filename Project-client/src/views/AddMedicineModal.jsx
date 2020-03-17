@@ -8,7 +8,7 @@ import {
   Modal, 
   ModalHeader, 
   ModalBody, 
-  ModalFooter
+
   } from 'reactstrap';
 
 class AddMedicineModal extends Component {
@@ -35,7 +35,7 @@ class AddMedicineModal extends Component {
   }
 
   render() {
-    // const { signInUsername, signInPassword } = this.state
+ 
     return (
       <React.Fragment>
       <Modal isOpen={this.props.opened} toggle={this.props.toggle}>

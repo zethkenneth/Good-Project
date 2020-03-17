@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AddStudentModal from './AddStudentModal';
 
-import { Card, CardHeader, CardBody, CardTitle, CardText, Button, CardFooter, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
+import {  Button, Container, Row, Col, Table, InputGroup, InputGroupAddon, InputGroupText, Input, Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 
 class Student extends Component {
