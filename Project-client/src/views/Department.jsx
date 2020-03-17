@@ -11,15 +11,26 @@ class Department extends Component {
 
     this.state = {
       showModal: false,
-      dataTable: []
+      departmentList: []
     }
   }
 
   componentDidMount(){
-    
-    fetch('http://localhost:3001/getDepartment')
-      .then(Response => Response.json())
-      .then(Department => console.log(Department));
+    fetch('http://localhost:3001/getDepartment', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        limit: 3,
+        offset: 3
+      })
+    })
+    .then(response => response.json())
+    .then(department => {
+        console.log(department);
+        this.setState({departmentList: department})
+      }
+    )
+    .catch(error => console.log(error));
   }
 
   toggleModal = () => {
@@ -58,91 +69,20 @@ class Department extends Component {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>  
-                        <td>ICS Department</td>
-                       
-                        <td>
-                          <Button className="btn btn-success btn-icon btn-sm mr-1">
-                            <i className="fa fa-edit"/>
-                          </Button>
-                          <Button className="btn btn-danger btn-icon btn-sm">
-                            <i className="fa fa-times"/>
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>ICS Department</td>
-                       
-                        <td>
-                          <Button className="btn btn-success btn-icon btn-sm mr-1">
-                            <i className="fa fa-edit"/>
-                          </Button>
-                          <Button className="btn btn-danger btn-icon btn-sm">
-                            <i className="fa fa-times"/>
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>ICS Department</td>
-                       
-                        <td>
-                          <Button className="btn btn-success btn-icon btn-sm mr-1">
-                            <i className="fa fa-edit"/>
-                          </Button>
-                          <Button className="btn btn-danger btn-icon btn-sm">
-                            <i className="fa fa-times"/>
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>ICS Department</td>
-                       
-                        <td>
-                          <Button className="btn btn-success btn-icon btn-sm mr-1">
-                            <i className="fa fa-edit"/>
-                          </Button>
-                          <Button className="btn btn-danger btn-icon btn-sm">
-                            <i className="fa fa-times"/>
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>ICS Department</td>
-                       
-                        <td>
-                          <Button className="btn btn-success btn-icon btn-sm mr-1">
-                            <i className="fa fa-edit"/>
-                          </Button>
-                          <Button className="btn btn-danger btn-icon btn-sm">
-                            <i className="fa fa-times"/>
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>ICS Department</td>
-                       
-                        <td>
-                          <Button className="btn btn-success btn-icon btn-sm mr-1">
-                            <i className="fa fa-edit"/>
-                          </Button>
-                          <Button className="btn btn-danger btn-icon btn-sm">
-                            <i className="fa fa-times"/>
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>ICS Department</td>
-                       
-                        <td>
-                          <Button className="btn btn-success btn-icon btn-sm mr-1">
-                            <i className="fa fa-edit"/>
-                          </Button>
-                          <Button className="btn btn-danger btn-icon btn-sm">
-                            <i className="fa fa-times"/>
-                          </Button>
-                        </td>
-                      </tr>
-                      
+                      {
+                        this.state.departmentList.map( row => (<tr>
+                          <td>{row.Department_Name}</td>
+                          <td>
+                            <Button className="btn btn-success btn-icon btn-sm mr-1">
+                              <i className="fa fa-edit"/>
+                            </Button>
+                            <Button className="btn btn-danger btn-icon btn-sm">
+                              <i className="fa fa-times"/>
+                            </Button>
+                          </td>
+                          </tr>
+                        ))
+                      }
                     </tbody>
                   </Table>
 
