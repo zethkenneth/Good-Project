@@ -33,7 +33,7 @@ ReactDOM.render(
       <Route path="/login" component={LoginLayout} />
       <Route path="/admin" render={props => <AdminLayout {...props} />} /> 
       <Route path="/adminsettingaccount" component={Account} />
-      
+      <Route path="/adminsettingaccountTable" component={AccountTable} /> 
       <Route path="/adminsettingcourse" component={Course} />
       <Route path="/adminsettingMedicine" component={Medicine}/>
       <Route path="/adminsettingaddemployee" component={addemployee}/>

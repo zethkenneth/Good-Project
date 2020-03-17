@@ -16,7 +16,7 @@ class Account extends Component {
   }
 
   componentDidMount(){
-    
+
     fetch('http://localhost:3001/getDepartment')
       .then(Response => Response.json())
       .then(Department => console.log(Department));

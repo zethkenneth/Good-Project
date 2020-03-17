@@ -41,14 +41,14 @@ class AddCourseModal extends Component {
     return (
       <React.Fragment>
       <Modal isOpen={this.props.opened} toggle={this.props.toggle}>
-        <ModalHeader toggle={this.props.toggle}>Add Department</ModalHeader>
+        <ModalHeader toggle={this.props.toggle}>Add Course</ModalHeader>
         <ModalBody>
           <Form>
             <FormGroup>
-              <label for="departmentName">Department Name</label>
+              <label for="departmentName">Course Name</label>
               <Input
                 onChange={this.onDepartmentNameChange}
-                placeholder="Enter Department Name"
+                placeholder="Enter Course Name"
                 type="text"
                 id="departmentName"
               />

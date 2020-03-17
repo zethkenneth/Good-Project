@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 
-import {
+
+import { 
+
   Form, 
   FormGroup, 
   Input, 
   Button, 
   Modal, 
   ModalHeader, 
-  ModalBody
+  ModalBody, 
+
   } from 'reactstrap';
 
-class AddDepartmentModal extends Component {
+class AddAccountModal extends Component {
 
   constructor(props) {
     super(props)
@@ -38,14 +41,14 @@ class AddDepartmentModal extends Component {
     return (
       <React.Fragment>
       <Modal isOpen={this.props.opened} toggle={this.props.toggle}>
-        <ModalHeader toggle={this.props.toggle}>Add Department</ModalHeader>
+        <ModalHeader toggle={this.props.toggle}>Add Account</ModalHeader>
         <ModalBody>
           <Form>
             <FormGroup>
-              <label for="departmentName">Department Name</label>
+              <label for="departmentName">Account Name</label>
               <Input
                 onChange={this.onDepartmentNameChange}
-                placeholder="Enter Department Name"
+                placeholder="Enter Account Name"
                 type="text"
                 id="departmentName"
               />
@@ -74,4 +77,4 @@ class AddDepartmentModal extends Component {
   }
 }
 
-export default AddDepartmentModal;
+export default AddAccountModal;
