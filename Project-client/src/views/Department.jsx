@@ -15,7 +15,7 @@ class Department extends Component {
     }
   }
 
-  componentDidMount(){
+  /*componentDidMount(){
     fetch('http://localhost:3001/getDepartment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -24,6 +24,17 @@ class Department extends Component {
         offset: 3
       })
     })
+    .then(response => response.json())
+    .then(department => {
+        console.log(department);
+        this.setState({departmentList: department})
+      }
+    )
+    .catch(error => console.log(error));
+  }*/
+  
+  componentDidMount(){
+    fetch('http://localhost:3001/getDepartment')
     .then(response => response.json())
     .then(department => {
         console.log(department);
