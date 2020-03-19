@@ -13,6 +13,7 @@ import AdminLayout from "layouts/Admin.jsx";
 import HomepageLayout from "layouts/Homepage.jsx";
 import LoginLayout from "views/Login.jsx";
 import Course from "views/Course.jsx";
+import Test from "views/Test.jsx";
 
 
 // import Department from "views/Department.jsx";
@@ -41,6 +42,7 @@ ReactDOM.render(
       <Route path="/adminsettingstudentTable" component={Student}/>
       <Route path="/adminsettingemployeeTable" component={Employee}/>
       <Route path="/adminsettingMedicineTable" component={Medicine} />
+      <Route path="/test" component={Test} />
       <Redirect to="/homepage" />
     </Switch>
   </Router>,
