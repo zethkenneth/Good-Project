@@ -34,7 +34,6 @@ class Employee extends Component {
 
                 <button onClick={this.toggleModal} className="btn-round btn btn-primary">Add Employee</button>
                 <AddEmployeeModal opened={this.state.showModal} toggle={this.toggleModal} />
-                  
                 
                 <InputGroup>
                   <Input placeholder="Search..." />
