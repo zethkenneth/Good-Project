@@ -1,7 +1,5 @@
-
 import React from "react";
-
-import SettingCards from "../components/SettingCards/SettingCards.jsx"
+import SettingCards from "../../components/SettingCards/SettingCards.jsx"
 
 
 
@@ -11,7 +9,6 @@ class Setting extends React.Component {
       <>
          <div className="content">
           <SettingCards />
-
         </div>
       </>
    );

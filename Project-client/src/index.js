@@ -11,18 +11,16 @@ import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 import AdminLayout from "layouts/Admin.jsx";
 import HomepageLayout from "layouts/Homepage.jsx";
-import LoginLayout from "views/Login.jsx";
-import Course from "views/Course.jsx";
 
 
-// import Department from "views/Department.jsx";
-import Department from "views/Department.jsx";
-import Account from "views/Account.jsx";
-import AccountTable from "views/AccountTable.jsx";
-import Employee from "views/Employee.jsx";
-import Student from "views/Student";
-import addemployee from "views/addemployee";
-import Medicine from "views/Medicine.jsx";
+
+//settings cards link
+import Department from "views/Settings/Department/Department.jsx";
+import Account from "views/Settings/Account/Account.jsx";
+import Employee from "views/Settings/Employee/Employee.jsx"
+import Student from "views/Settings/Student/Student.jsx";
+import Medicine from "views/Settings/Medicine/Medicine.jsx";
+import Course from "views/Settings/Course/Course.jsx"; 
 
 const hist = createBrowserHistory();
 
@@ -30,17 +28,13 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
       <Route path="/homepage" component={HomepageLayout} />
-      <Route path="/login" component={LoginLayout} />
       <Route path="/admin" render={props => <AdminLayout {...props} />} /> 
-      <Route path="/adminsettingaccount" component={Account} />
-      <Route path="/adminsettingaccountTable" component={AccountTable} /> 
-      <Route path="/adminsettingcourse" component={Course} />
-      <Route path="/adminsettingMedicine" component={Medicine}/>
-      <Route path="/adminsettingaddemployee" component={addemployee}/>
-      <Route path="/adminsettingdepartment" component={Department} />
-      <Route path="/adminsettingstudentTable" component={Student}/>
-      <Route path="/adminsettingemployeeTable" component={Employee}/>
-      <Route path="/adminsettingMedicineTable" component={Medicine} />
+            <Route path="/settingaccount" component={Account} />
+            <Route path="/settingcourse" component={Course} />
+            <Route path="/settingmedicine" component={Medicine}/>
+            <Route path="/settingdepartment" component={Department} />
+            <Route path="/settingstudent" component={Student}/>
+            <Route path="/settingemployee" component={Employee}/>
       <Redirect to="/homepage" />
     </Switch>
   </Router>,

@@ -16,12 +16,11 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import Dashboard from "views/Dashboard.jsx";
-
-import PatientRecords from "views/PatientRecords.jsx";
-import Setting from "views/Setting.jsx";
-import Inventory from "views/Inventory.jsx";
-import PatientInfo from "views/PatientInfo.jsx";
+import Dashboard from "views/Dashboard/Dashboard.jsx";
+import PatientRecords from "views/PatientRecords/PatientRecords.jsx";
+import Setting from "views/Settings/Setting.jsx";
+import Inventory from "views/Inventory/Inventory.jsx";
+import PatientInfo from "views/PatientInfo/PatientInfo.jsx";
 import Homepage from "layouts/Homepage.jsx";
 
 
