@@ -11,7 +11,6 @@ import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 import AdminLayout from "layouts/Admin.jsx";
 import HomepageLayout from "layouts/Homepage.jsx";
-import Course from "views/Course.jsx";
 import Test from "views/Test.jsx";
 
 
