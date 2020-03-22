@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
-import { Formik } from 'formik';
-import { Container, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Container, Button, FormGroup, Label, Input, FormFeedback } from 'reactstrap';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { object, string, number, boolean, array, mixed } from 'yup';
 // https://jaredpalmer.com/formik/docs/tutorial
+
+
+const initialValues = {
+    text: '',
+    email: '',
+    password: ''
+};
+
 class Test extends Component {
     constructor(props) {
         super(props);
@@ -12,22 +21,18 @@ class Test extends Component {
         return (
             <Container>
                 <Formik
-                    initialValues={{ textName: '', emailName: '', passwordName: '' }}
-                    validate={values => {
-                        const errors = {};
-                        if (!values.email) {
-                        errors.email = 'Required';
-                        } else if (
-                        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                        ) {
-                        errors.email = 'Invalid email address';
-                        }
-                        return errors;
-                    }}
+                    initialValues={initialValues}
+                    validationSchema={
+                        object({
+                            text: string().required().min(2).max(100),
+                            email: string().email().required(),
+                            password: string().required().min(8).max(40)
+                        })
+                    }
                     onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
+                            alert(JSON.stringify(values, null, 2));
+                            setSubmitting(false);
                         }, 400);
                     }}
                 >
@@ -35,37 +40,40 @@ class Test extends Component {
                         values,
                         errors,
                         touched,
-                        handleChange,
-                        handleBlur,
-                        handleSubmit,
                         isSubmitting,
                         /* and other goodies */
                     }) => (
-                        <form onSubmit={handleSubmit}>
-                        <input
-                            type="email"
-                            name="email"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={values.email}
-                        />
-                        {errors.email && touched.email && errors.email}
-                        <input
-                            type="password"
-                            name="password"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={values.password}
-                        />
-                        {errors.password && touched.password && errors.password}
-                        <button type="submit" disabled={isSubmitting}>
+                        <Form>
+                            <FormGroup>
+                                <Label for="text">Text</Label>
+                                <Field  id="text" name="text" as={Input} placeholder="Text" type="text" />
+                                <FormFeedback>{<ErrorMessage name="text" />}</FormFeedback>
+                            </FormGroup>
+                            
+                            <FormGroup>
+                                <Label for="email">Email</Label>
+                                <Field invalid={touched.email && Boolean(errors.email)} id="email" name="email" as={Input} placeholder="Email" type="email" />
+                                <FormFeedback>{<ErrorMessage name="email" />}</FormFeedback>
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label for="email">Password</Label>
+                                <Field invalid={touched.password && Boolean(errors.password)} id="password" name="password" as={Input} placeholder="Password" type="password" />
+                                <FormFeedback>{<ErrorMessage name="password" />}</FormFeedback>
+                            </FormGroup>
+                        
+                        <Button type="submit" disabled={isSubmitting}>
                             Submit
-                        </button>
-                        </form>
+                        </Button>
+
+                        <pre>{JSON.stringify(errors, null, 4)}</pre>
+                        <pre>{JSON.stringify(values, null, 4)}</pre>
+
+                        </Form>
                     )}
                 </Formik>
 
-                <Form>
+                {/* <Form>
                     <FormGroup>
                         <Label for="exampleText">Text</Label>
                         <Input type="text" name="textName" id="exampleText" placeholder="Text placeholder" />
@@ -118,7 +126,7 @@ class Test extends Component {
                         </FormGroup>
                     </FormGroup>
                     <Button>Submit</Button>
-                </Form>
+                </Form> */}
             </Container>
         );
     }
