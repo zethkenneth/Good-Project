@@ -67,7 +67,7 @@ var routes = [
   {
     path: "/logout",
     name: "Logout",
-    icon: "fas fa-sign-out-alt",
+    icon: "far fa-sign-out-alt",
     component: Homepage,
     layout: "/logout"
     

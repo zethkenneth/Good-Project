@@ -5,7 +5,7 @@ import { Button } from 'reactstrap';
 import wmsu from 'assets/img/wmsu.png';
 
 
-import LoginModal from '../../views/LoginModal';
+import LoginModal from '../Modals/LoginModal';
 
 class HomepageNavbar extends React.Component {
     constructor(){
