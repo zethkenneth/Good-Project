@@ -100,9 +100,29 @@ server.post('/addDepartment', (req,res) => {
 });
 
 server.get('/getDepartment',(req,res) => {
-    let query = "Select * from Department"
+    let query = "Select * from Department ORDER BY DepartmentName"
     db.serialize(() => {
         db.all(query, (err ,rows) => {
+            const Department = rows.map((row) => {
+                return {
+                    Department_Name: row.DepartmentName
+                }
+            })
+            if (err) {
+                res.send(err);
+            } else {
+                res.json(Department);
+            }
+        })
+    });
+});
+
+server.get('/getDepartmentHaids',(req,res) => {
+    let query = "SELECT * FROM Department ORDER BY DepartmentName LIMIT ? OFFSET ?"
+    let limit = req.body.limit
+    let offset = req.body.offset
+    db.serialize(() => {
+        db.all(query, [limit, offset], (err ,rows) => {
             const Department = rows.map((row) => {
                 return {
                     Department_Name: row.DepartmentName
