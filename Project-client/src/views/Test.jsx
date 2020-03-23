@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Button, FormGroup, Label, Input, FormFeedback } from 'reactstrap';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { object, string, number, boolean, array, mixed } from 'yup';
+import { object, string } from 'yup';
 // https://jaredpalmer.com/formik/docs/tutorial
 
 
@@ -12,11 +12,6 @@ const initialValues = {
 };
 
 class Test extends Component {
-    constructor(props) {
-        super(props);
-
-    }
-
     render() {
         return (
             <Container>

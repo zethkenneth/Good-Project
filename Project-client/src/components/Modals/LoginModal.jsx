@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { FormGroup, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter, Label, FormFeedback } from 'reactstrap';
-import { Form, Formik, Field, useField, ErrorMessage } from 'formik';
-import { object, string, number, boolean, array, mixed } from 'yup';
+import { FormGroup, Input, Button, Modal, ModalHeader, ModalBody, Label, FormFeedback } from 'reactstrap';
+import { Form, Formik, Field, ErrorMessage } from 'formik';
+import { object, string } from 'yup';
 
 const initialValues = {
   user: '',
@@ -11,9 +11,6 @@ const initialValues = {
 };
 
 class LoginModal extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     return (
