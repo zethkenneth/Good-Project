@@ -156,7 +156,8 @@ class Header extends React.Component {
             navbar
             className="justify-content-end"
           >
-            <form>
+           
+           <form>
               <InputGroup className="no-border">
                 <Input placeholder="Search..." />
                 <InputGroupAddon addonType="append">
